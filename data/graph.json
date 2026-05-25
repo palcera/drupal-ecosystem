@@ -1,0 +1,51 @@
+{
+  "id": "drupal",
+  "name": "Drupal Ecosystem",
+  "group": "root",
+  "weight": 0,
+  "description": "Drupal is more than a CMS — it is a framework, a global community of initiatives and local organizations, and an ecosystem of companies that build products and services around it.",
+  "links": [{"label": "drupal.org", "url": "https://drupal.org"}],
+  "related_ids": [],
+  "children": [
+    {
+      "id": "code",
+      "name": "Code",
+      "group": "code",
+      "weight": 0,
+      "description": "Drupal Core, contributed modules, and the tools developers use to build and run Drupal sites.",
+      "links": [{"label": "drupal.org/project/drupal", "url": "https://drupal.org/project/drupal"}],
+      "related_ids": [],
+      "children": []
+    },
+    {
+      "id": "community",
+      "name": "Community",
+      "group": "community",
+      "weight": 0,
+      "description": "The people, initiatives, and organizations behind Drupal — globally and regionally.",
+      "links": [{"label": "drupal.org/community", "url": "https://drupal.org/community"}],
+      "related_ids": [],
+      "children": []
+    },
+    {
+      "id": "private",
+      "name": "Private Organizations",
+      "group": "private",
+      "weight": 0,
+      "description": "Companies that build products, sell services, sponsor events, and employ Drupal contributors.",
+      "links": [],
+      "related_ids": [],
+      "children": []
+    },
+    {
+      "id": "bluefly",
+      "name": "Bluefly",
+      "group": "bluefly",
+      "weight": 0,
+      "description": "A platform sustaining independent developers and small companies who build community, tools, and products across the Drupal ecosystem.",
+      "links": [{"label": "bluefly.io", "url": "https://bluefly.io"}],
+      "related_ids": [],
+      "children": []
+    }
+  ]
+}
