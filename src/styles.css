@@ -1,6 +1,7 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; font: 16px/1.5 system-ui, sans-serif; }
-.layout { display: grid; grid-template-columns: 2fr 1fr; height: 100vh; }
-#viz { background: #fafafa; }
+.layout { display: grid; grid-template-columns: 1fr; height: 100vh; }
+#viz { background: #fafafa; display: flex; align-items: center; justify-content: center; }
 #viz svg { width: 100%; height: 100%; display: block; }
-#panel { background: #fff; padding: 1.5rem; border-left: 1px solid #eee; overflow-y: auto; }
+#panel { background: #fff; padding: 1.5rem; border-left: 1px solid #eee; overflow-y: auto; display: none; }
+#panel:not(:empty) { display: block; }
