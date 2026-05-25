@@ -2,6 +2,7 @@
 import { validate } from './validate.js';
 
 const DATA_URL = '../data/graph.json';
+const VIEW = 800;
 
 async function main() {
   const data = await fetch(DATA_URL).then((r) => {
@@ -14,38 +15,82 @@ async function main() {
     throw new Error('graph.json failed validation:\n  - ' + errors.join('\n  - '));
   }
 
-  // Give every leaf weight=1 for this task so pack() has something to sum.
   const root = d3.hierarchy(data).sum((d) => (d.children?.length ? 0 : (d.weight || 1)));
-  const layout = d3.pack().size([800, 800]).padding(6);
-  layout(root);
+  d3.pack().size([VIEW, VIEW]).padding(6)(root);
 
   const svg = d3
     .select('#viz')
     .append('svg')
-    .attr('viewBox', '0 0 800 800')
-    .attr('preserveAspectRatio', 'xMidYMid meet');
+    .attr('viewBox', `0 0 ${VIEW} ${VIEW}`)
+    .attr('preserveAspectRatio', 'xMidYMid meet')
+    .style('cursor', 'pointer');
 
-  svg
+  let focus = root;
+  let view;
+
+  const g = svg.append('g');
+
+  const node = g
     .selectAll('circle')
-    .data(root.descendants())
+    .data(root.descendants().slice(1))
     .join('circle')
-    .attr('cx', (d) => d.x)
-    .attr('cy', (d) => d.y)
-    .attr('r', (d) => d.r)
     .attr('fill', (d) => groupColor(d.data.group, d.depth))
-    .attr('stroke', '#fff');
+    .attr('stroke', '#fff')
+    .attr('pointer-events', (d) => (!d.children ? 'none' : null))
+    .on('click', (event, d) => {
+      if (focus !== d) {
+        zoom(event, d);
+        event.stopPropagation();
+      }
+    });
 
-  svg
+  const label = g
     .selectAll('text')
-    .data(root.descendants().filter((d) => d.depth > 0))
+    .data(root.descendants().slice(1))
     .join('text')
-    .attr('x', (d) => d.x)
-    .attr('y', (d) => d.y)
+    .style('fill-opacity', (d) => (d.parent === root ? 1 : 0))
+    .style('display', (d) => (d.parent === root ? 'inline' : 'none'))
     .attr('text-anchor', 'middle')
     .attr('dominant-baseline', 'middle')
     .attr('font-size', (d) => Math.max(10, d.r / 6))
     .attr('fill', '#fff')
+    .attr('pointer-events', 'none')
     .text((d) => d.data.name);
+
+  svg.on('click', (event) => zoom(event, root));
+  zoomTo([root.x, root.y, root.r * 2]);
+
+  function zoomTo(v) {
+    const k = VIEW / v[2];
+    view = v;
+    label.attr('transform', (d) => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
+    node.attr('transform', (d) => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
+    node.attr('r', (d) => d.r * k);
+  }
+
+  function zoom(event, d) {
+    focus = d;
+    const transition = svg
+      .transition()
+      .duration(event?.altKey ? 7500 : 750)
+      .tween('zoom', () => {
+        const i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2]);
+        return (t) => zoomTo(i(t));
+      });
+
+    label
+      .filter(function (d) {
+        return d.parent === focus || this.style.display === 'inline';
+      })
+      .transition(transition)
+      .style('fill-opacity', (d) => (d.parent === focus ? 1 : 0))
+      .on('start', function (d) {
+        if (d.parent === focus) this.style.display = 'inline';
+      })
+      .on('end', function (d) {
+        if (d.parent !== focus) this.style.display = 'none';
+      });
+  }
 
   console.log(`rendered ${root.descendants().length} nodes`);
 }
@@ -58,7 +103,6 @@ function groupColor(group, depth) {
     private: '#d62728',
     bluefly: '#9467bd',
   }[group] || '#888';
-  // Lighten slightly with depth (placeholder until §5 polish task).
   return base;
 }
 
