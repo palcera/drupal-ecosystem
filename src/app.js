@@ -1,4 +1,6 @@
 // Boot
+import { validate } from './validate.js';
+
 const DATA_URL = '../data/graph.json';
 
 async function main() {
@@ -6,6 +8,11 @@ async function main() {
     if (!r.ok) throw new Error(`HTTP ${r.status} loading ${DATA_URL}`);
     return r.json();
   });
+
+  const errors = validate(data);
+  if (errors.length) {
+    throw new Error('graph.json failed validation:\n  - ' + errors.join('\n  - '));
+  }
 
   // Give every leaf weight=1 for this task so pack() has something to sum.
   const root = d3.hierarchy(data).sum((d) => (d.children?.length ? 0 : (d.weight || 1)));
