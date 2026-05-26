@@ -1,6 +1,6 @@
 {
   "id": "drupal",
-  "name": "Drupal Ecosystem",
+  "name": "Come to explore the Drupal Universe",
   "group": "root",
   "weight": 0,
   "description": "Drupal is more than a CMS — it is a framework, a global community of initiatives and local organizations, and an ecosystem of companies that build products and services around it.",
@@ -771,11 +771,11 @@
       "related_ids": [],
       "children": [
         {
-          "id": "private-us",
-          "name": "United States",
+          "id": "private-hosting",
+          "name": "Hosting Services",
           "group": "private",
           "weight": 0,
-          "description": "US-based Drupal companies.",
+          "description": "Companies offering managed Drupal hosting and web ops platforms.",
           "links": [],
           "related_ids": [],
           "children": [
@@ -784,19 +784,104 @@
               "name": "Acquia",
               "group": "private",
               "weight": 5,
-              "description": "The largest commercial Drupal-focused vendor; provides hosting, digital experience products, and is a long-time Drupal Association sponsor.",
+              "description": "The largest commercial Drupal-focused vendor; provides managed hosting, digital experience products, training (Acquia Academy), and is a long-time Drupal Association sponsor.",
               "links": [{"label": "acquia.com", "url": "https://www.acquia.com"}],
-              "related_ids": ["drupalcon-na"]
+              "related_ids": ["drupalcon-na", "private-training"]
             },
             {
               "id": "pantheon",
               "name": "Pantheon",
               "group": "private",
               "weight": 4,
-              "description": "Web ops platform for Drupal (and WordPress); hosting, workflow tooling, and CDN.",
+              "description": "Web ops platform for Drupal (and WordPress); managed hosting, workflow tooling, and CDN.",
               "links": [{"label": "pantheon.io", "url": "https://pantheon.io"}],
               "related_ids": []
             },
+            {
+              "id": "drupito",
+              "name": "Drupito",
+              "group": "private",
+              "weight": 2,
+              "description": "Specialized Drupal hosting provider.",
+              "links": [{"label": "drupito.com", "url": "https://drupito.com"}],
+              "related_ids": []
+            },
+            {
+              "id": "flexite",
+              "name": "Flexite",
+              "group": "private",
+              "weight": 2,
+              "description": "Drupal hosting and managed services provider.",
+              "links": [],
+              "related_ids": []
+            }
+          ]
+        },
+        {
+          "id": "private-training",
+          "name": "Training",
+          "group": "private",
+          "weight": 0,
+          "description": "Companies offering Drupal training, courses, and certification programs. Acquia (in Hosting Services) also runs Acquia Academy.",
+          "links": [],
+          "related_ids": ["acquia"],
+          "children": [
+            {
+              "id": "1xinternet",
+              "name": "1xINTERNET",
+              "group": "private",
+              "weight": 3,
+              "description": "European Drupal agency offering training alongside development services.",
+              "links": [{"label": "1xinternet.com", "url": "https://www.1xinternet.com"}],
+              "related_ids": []
+            },
+            {
+              "id": "zoocha",
+              "name": "Zoocha",
+              "group": "private",
+              "weight": 3,
+              "description": "UK Drupal agency providing certified Drupal training courses.",
+              "links": [{"label": "zoocha.com", "url": "https://www.zoocha.com"}],
+              "related_ids": []
+            },
+            {
+              "id": "salsa-digital",
+              "name": "Salsa Digital",
+              "group": "private",
+              "weight": 3,
+              "description": "Australian open-source consultancy delivering Drupal training and government digital services.",
+              "links": [{"label": "salsa.digital", "url": "https://salsa.digital"}],
+              "related_ids": []
+            },
+            {
+              "id": "seed-co",
+              "name": "Seed",
+              "group": "private",
+              "weight": 2,
+              "description": "Colombia-based Drupal team offering training and development services.",
+              "links": [],
+              "related_ids": []
+            },
+            {
+              "id": "drupal-easy",
+              "name": "Drupal Easy",
+              "group": "private",
+              "weight": 3,
+              "description": "Long-running Drupal training program; podcast, career-prep courses, and Drupal Career Online.",
+              "links": [{"label": "drupaleasy.com", "url": "https://www.drupaleasy.com"}],
+              "related_ids": []
+            }
+          ]
+        },
+        {
+          "id": "private-certified",
+          "name": "Certified Partners",
+          "group": "private",
+          "weight": 0,
+          "description": "Drupal-focused agencies and consultancies delivering custom builds, integrations, and ongoing support.",
+          "links": [],
+          "related_ids": [],
+          "children": [
             {
               "id": "palantir-net",
               "name": "Palantir.net",
@@ -831,26 +916,6 @@
               "weight": 3,
               "description": "Design and Drupal/WordPress agency focused on mission-driven organizations.",
               "links": [{"label": "kanopi.com", "url": "https://kanopi.com"}],
-              "related_ids": []
-            }
-          ]
-        },
-        {
-          "id": "private-latam",
-          "name": "Latin America",
-          "group": "private",
-          "weight": 0,
-          "description": "Latin American Drupal companies.",
-          "links": [],
-          "related_ids": [],
-          "children": [
-            {
-              "id": "seed-co",
-              "name": "Seed",
-              "group": "private",
-              "weight": 2,
-              "description": "Colombia-based Drupal team.",
-              "links": [],
               "related_ids": []
             },
             {

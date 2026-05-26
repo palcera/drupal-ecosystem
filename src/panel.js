@@ -9,7 +9,8 @@ export function renderPanel(node, allNodes, onNavigate) {
     })
     .join(' › ');
   panel.insertAdjacentHTML('beforeend', `<nav class="crumbs">${crumbs}</nav>`);
-  panel.insertAdjacentHTML('beforeend', `<h2 class="name">${escapeHtml(node.data.name)}</h2>`);
+  const headingTag = node.parent ? 'h2' : 'h1';
+  panel.insertAdjacentHTML('beforeend', `<${headingTag} class="name">${escapeHtml(node.data.name)}</${headingTag}>`);
 
   if (node.data.description) {
     panel.insertAdjacentHTML('beforeend', `<p class="desc">${escapeHtml(node.data.description)}</p>`);
