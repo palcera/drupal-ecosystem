@@ -14,3 +14,4 @@ html, body { margin: 0; height: 100%; font: 16px/1.5 system-ui, sans-serif; }
 .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .chip { font: inherit; padding: 0.25rem 0.6rem; border: 1px solid #ccc; background: #fff; border-radius: 999px; cursor: pointer; }
 .chip:hover { background: #f0f0f0; }
+circle:focus { outline: 3px solid #ffbf00; outline-offset: 2px; }

@@ -38,11 +38,27 @@ async function main() {
     .attr('fill', (d) => groupColor(d.data.group, d.depth))
     .attr('stroke', '#fff')
     .attr('pointer-events', (d) => (!d.children ? 'none' : null))
+    .attr('tabindex', 0)
+    .attr('role', 'button')
+    .attr('aria-label', (d) => d.data.name)
     .on('click', (event, d) => {
       if (focus !== d) {
         zoom(event, d);
         renderPanel(d, allNodes, navigateById);
         event.stopPropagation();
+      }
+    })
+    .on('keydown', (event, d) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        if (focus !== d) {
+          zoom(event, d);
+          renderPanel(d, allNodes, navigateById);
+        }
+      } else if (event.key === 'Escape') {
+        event.preventDefault();
+        zoom(event, root);
+        renderPanel(root, allNodes, navigateById);
       }
     });
 
