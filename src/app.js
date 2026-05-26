@@ -124,14 +124,14 @@ async function main() {
 }
 
 function groupColor(group, depth) {
-  const base = {
-    root: '#222',
-    code: '#1f77b4',
-    community: '#2ca02c',
-    private: '#d62728',
-    bluefly: '#9467bd',
-  }[group] || '#888';
-  return base;
+  const palette = {
+    root: ['#222'],
+    code:      ['#1f4f8a', '#3471b8', '#5290d3', '#82b0e2', '#b0cdee'],
+    community: ['#1e6e2a', '#338e3f', '#52ab5e', '#82c58c', '#b0dcb6'],
+    private:   ['#8c1f23', '#b53438', '#d65456', '#e58588', '#f0b0b2'],
+    bluefly:   ['#5e3686', '#7a4ea8', '#9670c3', '#b699d3', '#d3bce4'],
+  }[group] || ['#888'];
+  return palette[Math.min(depth - 1, palette.length - 1)] || palette[0];
 }
 
 main().catch((err) => {
