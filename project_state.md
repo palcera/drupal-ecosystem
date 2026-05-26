@@ -1,8 +1,9 @@
 # Drupal Ecosystem Graph — Project State
 
 **Last updated:** 2026-05-25
-**Current phase:** Brainstorming / Design
-**Next phase:** Design doc → implementation plan → v1 build
+**Current phase:** Published v1 / awaiting feedback
+**Live URL:** https://palcera.github.io/drupal-ecosystem/src/
+**Next phase:** Gather feedback, fill in TBD entries (Bluefly examples, LatAm camps), iterate
 
 ---
 
@@ -100,15 +101,19 @@ Reference docs (stable inputs) live at `../reference-docs/drupal-ecosystem/`.
 - [x] CLAUDE.md, settings.json, .gitignore
 - [x] Requirements gathered through clarifying questions
 - [x] ADR 0001 — visualization library (D3) documented with alternatives
+- [x] Design doc (`docs/plans/2026-05-25-drupal-ecosystem-graph-design.md`)
+- [x] Implementation plan (`docs/plans/2026-05-25-drupal-ecosystem-graph-implementation.md`)
+- [x] v1 dataset authored — full Drupal ecosystem inventory in `data/graph.json` (palette aligned to Drupal brand portal)
+- [x] Static site built in `src/` — D3 circle pack + zoom + side panel + cross-reference navigation + keyboard nav + reduced-motion + no-JS fallback
+- [x] Manual QA checklist (`docs/project/qa-log.md`) — Chromium green; Firefox/Safari/VoiceOver pending real-human pass
+- [x] Deployed to GitHub Pages: https://palcera.github.io/drupal-ecosystem/src/
 
-## What's next (in order)
+## What's next
 
-1. **Write the design doc** — full design in `docs/plans/2026-05-25-drupal-ecosystem-graph-design.md` covering data model (including `related_ids` for cross-group ties), component breakdown, interaction details, accessibility, deployment.
-2. **Get design approval** from the project lead.
-3. **Implementation plan** — invoke `superpowers:writing-plans` to produce a step-by-step build plan.
-4. **Author v1 dataset** — populate `data/` with real names, descriptions, links, and cross-group `related_ids` for ~40–60 nodes.
-5. **Build the static site** in `src/` — D3 circle pack + zoom + side panel + cross-reference navigation.
-6. **Deploy** — pick host (GitHub Pages or Netlify), publish, share for feedback.
+1. Gather feedback from the project lead and a few newcomers.
+2. Fill in placeholder leaves (Bluefly Independent Developers / Small Companies, Latin America community camps).
+3. Cross-browser pass on Firefox + Safari, screen-reader pass on VoiceOver/NVDA.
+4. Decide on §15 open questions (final URL/hosting, branding stance, translations).
 
 ## Open questions (parking lot)
 
