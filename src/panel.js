@@ -9,7 +9,12 @@ export function renderPanel(node, allNodes, onNavigate) {
     })
     .join(' › ');
   panel.insertAdjacentHTML('beforeend', `<nav class="crumbs">${crumbs}</nav>`);
-  panel.insertAdjacentHTML('beforeend', `<h1 class="name">${escapeHtml(node.data.name)}</h1>`);
+  const titleText = !node.parent ? 'Come to explore the Drupal Universe' : node.data.name;
+  panel.insertAdjacentHTML('beforeend', `<h1 class="name">${escapeHtml(titleText)}</h1>`);
+
+  if (node.data.description) {
+    panel.insertAdjacentHTML('beforeend', `<p class="desc">${escapeHtml(node.data.description)}</p>`);
+  }
 
   if (!node.parent) {
     panel.insertAdjacentHTML(
@@ -26,15 +31,11 @@ export function renderPanel(node, allNodes, onNavigate) {
     );
   }
 
-  if (node.data.description) {
-    panel.insertAdjacentHTML('beforeend', `<p class="desc">${escapeHtml(node.data.description)}</p>`);
-  }
-
   if (node.data.links?.length) {
     const items = node.data.links
       .map((l) => `<li><a href="${l.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(l.label)}</a></li>`)
       .join('');
-    panel.insertAdjacentHTML('beforeend', `<section><h2>Links</h2><ul>${items}</ul></section>`);
+    panel.insertAdjacentHTML('beforeend', `<section><h2>Reference links</h2><ul>${items}</ul></section>`);
   }
 
   if (node.data.related_ids?.length && allNodes) {
