@@ -1,0 +1,8 @@
+{
+  "name": "drupal-ecosystem-graph",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:fallback": "node scripts/build-fallback.mjs"
+  }
+}
