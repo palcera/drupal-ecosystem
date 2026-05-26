@@ -45,9 +45,12 @@ function flatten(root) {
 
   function walk(node, parent, depth, pillar) {
     const top = depth <= 1 ? node.group : pillar;
+    // Shorter label for the root in the force-graph view; the canonical
+    // dataset keeps the long form for the other diagrams.
+    const displayName = depth === 0 ? 'Drupal Universe' : node.name;
     const n = {
       id: node.id,
-      name: node.name,
+      name: displayName,
       description: node.description || '',
       links: node.links || [],
       related_ids: node.related_ids || [],
