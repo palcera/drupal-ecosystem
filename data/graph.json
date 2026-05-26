@@ -161,7 +161,7 @@
                 },
                 {
                   "id": "florida-drupal-community",
-                  "name": "Florida Drupal Community",
+                  "name": "Florida",
                   "group": "community",
                   "weight": 0,
                   "description": "Regional Drupal community in Florida; organizes Florida DrupalCamp annually.",
@@ -181,7 +181,7 @@
                 },
                 {
                   "id": "texas-drupal-community",
-                  "name": "Texas Drupal Community",
+                  "name": "Texas",
                   "group": "community",
                   "weight": 0,
                   "description": "Regional Drupal community in Texas; organizes Texas DrupalCamp annually.",
