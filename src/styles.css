@@ -17,3 +17,8 @@ html, body { margin: 0; height: 100%; font: 16px/1.5 system-ui, sans-serif; }
 circle:focus { outline: 3px solid #ffbf00; outline-offset: 2px; }
 .legend ul { padding-left: 1.25rem; margin: 0.5rem 0 0; }
 .legend li { padding: 0.15rem 0; }
+
+@media (max-width: 1023px) {
+  .layout { grid-template-columns: 1fr; grid-template-rows: 60vh 40vh; }
+  #panel { border-left: none; border-top: 1px solid #eee; }
+}
