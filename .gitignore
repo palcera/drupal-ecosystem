@@ -5,3 +5,5 @@ dist/
 .DS_Store
 .env
 .env.*
+verify-fullwidth.png
+.playwright-mcp/

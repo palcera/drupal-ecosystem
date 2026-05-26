@@ -147,12 +147,11 @@ async function main() {
   console.log(`rendered ${root.descendants().length} nodes`);
 }
 
-// Single monochrome scale from the official Drupal brand palette
-// (drupal.widencollective.com brand portal): Navy -> Blue -> Sky -> tints.
-// All groups share the same scale; depth lightens the shade.
+// Mirrors src/tokens.css --node-1 .. --node-5 (see docs/research/brand-cues.md).
+// Hardcoded here because SVG fills can't read CSS custom properties in all browsers.
 function groupColor(group, depth) {
-  if (group === 'root') return '#0a1632'; // deeper than Navy for the root backdrop
-  const shades = ['#12285F', '#006AA9', '#009CDE', '#7FC9EC', '#CCEDF9'];
+  if (group === 'root') return '#0A1A3A'; // matches --bg so root blends into the page
+  const shades = ['#1A3672', '#006AA9', '#009CDE', '#5EB8E8', '#CCEDF9'];
   return shades[Math.min(depth - 1, shades.length - 1)];
 }
 
