@@ -24,7 +24,11 @@ async function main() {
     .append('svg')
     .attr('viewBox', `${-VIEW / 2} ${-VIEW / 2} ${VIEW} ${VIEW}`)
     .attr('preserveAspectRatio', 'xMidYMid meet')
+    .attr('role', 'img')
     .style('cursor', 'pointer');
+
+  svg.append('title').text('Drupal Ecosystem diagram');
+  svg.append('desc').text('An interactive circle-packing visualization of the Drupal ecosystem: Code, Community, Private Organizations, and Bluefly.');
 
   let focus = root;
   let view;
