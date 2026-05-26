@@ -16,7 +16,7 @@ a:hover { color: var(--node-4); }
 
 body {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 }
 
@@ -199,6 +199,33 @@ body {
 
 .legend ul { padding-left: 1.25rem; margin: var(--space-sm) 0 0; }
 .legend li { padding: 0.15rem 0; }
+
+/* ── Footer ─────────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--divider);
+  margin-top: var(--space-xl);
+  color: var(--fg-muted);
+  font-size: 0.9rem;
+}
+.site-footer__inner {
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md) var(--space-xl);
+  justify-content: space-between;
+  align-items: baseline;
+}
+.site-footer__line { margin: 0; }
+.site-footer__label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  color: var(--fg-subtle);
+  margin-right: var(--space-sm);
+}
+.site-footer a { color: var(--fg); text-decoration: none; border-bottom: 1px solid var(--divider); }
+.site-footer a:hover { color: var(--node-3); border-bottom-color: var(--node-3); }
 
 /* ── SVG nodes ──────────────────────────────────────── */
 circle {

@@ -3,7 +3,10 @@ export function renderPanel(node, allNodes, onNavigate) {
   panel.innerHTML = '';
 
   const crumbs = ancestorsOf(node)
-    .map((a) => `<a href="#" data-id="${a.data.id}">${escapeHtml(a.data.name)}</a>`)
+    .map((a, i) => {
+      const label = i === 0 ? 'Home' : a.data.name;
+      return `<a href="#" data-id="${a.data.id}">${escapeHtml(label)}</a>`;
+    })
     .join(' › ');
   panel.insertAdjacentHTML('beforeend', `<nav class="crumbs">${crumbs}</nav>`);
   panel.insertAdjacentHTML('beforeend', `<h1 class="name">${escapeHtml(node.data.name)}</h1>`);
