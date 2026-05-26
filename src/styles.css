@@ -18,6 +18,9 @@ circle:focus { outline: 3px solid #ffbf00; outline-offset: 2px; }
 .legend ul { padding-left: 1.25rem; margin: 0.5rem 0 0; }
 .legend li { padding: 0.15rem 0; }
 
+.load-error { background: #fff3f3; border: 1px solid #f5c2c7; color: #842029; padding: 1rem; margin: 1rem; border-radius: 6px; }
+.load-error button { margin-top: 0.5rem; font: inherit; padding: 0.4rem 0.9rem; border: 1px solid #842029; background: #fff; color: #842029; border-radius: 4px; cursor: pointer; }
+
 @media (max-width: 1023px) {
   .layout { grid-template-columns: 1fr; grid-template-rows: 60vh 40vh; }
   #panel { border-left: none; border-top: 1px solid #eee; }

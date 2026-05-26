@@ -156,10 +156,20 @@ function groupColor(group, depth) {
   return shades[Math.min(depth - 1, shades.length - 1)];
 }
 
+function showError(message) {
+  const el = document.createElement('div');
+  el.className = 'load-error';
+  el.innerHTML = `
+    <strong>Could not load the diagram data.</strong>
+    <p></p>
+    <button type="button">Retry</button>
+  `;
+  el.querySelector('p').textContent = message;
+  el.querySelector('button').addEventListener('click', () => location.reload());
+  document.body.prepend(el);
+}
+
 main().catch((err) => {
   console.error(err);
-  document.body.insertAdjacentHTML(
-    'afterbegin',
-    `<p style="color:#b00;padding:1rem">Could not load the diagram data: ${err.message}</p>`,
-  );
+  showError(err.message);
 });
