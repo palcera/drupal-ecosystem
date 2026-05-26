@@ -18,7 +18,12 @@ async function main() {
     throw new Error('graph.json failed validation:\n  - ' + errors.join('\n  - '));
   }
 
-  render(reparent(data));
+  render(reparent(data), {
+    drawRoot: true,
+    rootStroke: '#5EB8E8',
+    rootStrokeWidth: 2,
+    rootDash: '6 4',
+  });
 }
 
 // Lift the Community subtree to be the root; demote Framework, Partners and

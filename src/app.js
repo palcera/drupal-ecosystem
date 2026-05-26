@@ -9,7 +9,7 @@ const VIEW = 800;
 // group → that subtree's depth-4 reveals; etc.
 const DEPTH_BUDGET = 3;
 
-export function render(data) {
+export function render(data, opts = {}) {
   const root = d3.hierarchy(data).sum((d) => (d.children?.length ? 0 : (d.weight || 1)));
   d3.pack().size([VIEW, VIEW]).padding(6)(root);
 
@@ -28,6 +28,21 @@ export function render(data) {
   let view;
 
   const g = svg.append('g');
+
+  // Optional outer ring around the root pack — used by Draft 1 to make the
+  // enclosing group visible as a wrapping circle. Pointer-events disabled so
+  // clicks pass through to the SVG (which zooms back to root).
+  const rootFrame = opts.drawRoot
+    ? g
+        .append('circle')
+        .attr('class', 'root-frame')
+        .attr('fill', opts.rootFill || 'none')
+        .attr('stroke', opts.rootStroke || '#5EB8E8')
+        .attr('stroke-width', opts.rootStrokeWidth || 2)
+        .attr('stroke-dasharray', opts.rootDash || null)
+        .attr('pointer-events', 'none')
+        .attr('r', root.r)
+    : null;
 
   const node = g
     .selectAll('circle')
@@ -132,6 +147,11 @@ export function render(data) {
     label.attr('transform', (d) => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
     node.attr('transform', (d) => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
     node.attr('r', (d) => d.r * k);
+    if (rootFrame) {
+      rootFrame
+        .attr('transform', `translate(${(root.x - v[0]) * k},${(root.y - v[1]) * k})`)
+        .attr('r', root.r * k);
+    }
   }
 
   function zoom(event, d) {
