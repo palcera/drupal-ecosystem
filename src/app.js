@@ -41,7 +41,7 @@ async function main() {
     .on('click', (event, d) => {
       if (focus !== d) {
         zoom(event, d);
-        renderPanel(d);
+        renderPanel(d, allNodes, navigateById);
         event.stopPropagation();
       }
     });
@@ -59,9 +59,18 @@ async function main() {
     .attr('pointer-events', 'none')
     .text((d) => d.data.name);
 
-  svg.on('click', (event) => { zoom(event, root); renderPanel(root); });
+  const allNodes = root.descendants();
+  function navigateById(id) {
+    const target = allNodes.find((n) => n.data.id === id);
+    if (target) {
+      zoom(null, target);
+      renderPanel(target, allNodes, navigateById);
+    }
+  }
+
+  svg.on('click', (event) => { zoom(event, root); renderPanel(root, allNodes, navigateById); });
   zoomTo([root.x, root.y, root.r * 2]);
-  renderPanel(root);
+  renderPanel(root, allNodes, navigateById);
 
   function zoomTo(v) {
     const k = VIEW / v[2];

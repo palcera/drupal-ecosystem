@@ -1,4 +1,4 @@
-export function renderPanel(node) {
+export function renderPanel(node, allNodes, onNavigate) {
   const panel = document.getElementById('panel');
   panel.innerHTML = '';
 
@@ -17,6 +17,26 @@ export function renderPanel(node) {
       .map((l) => `<li><a href="${l.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(l.label)}</a></li>`)
       .join('');
     panel.insertAdjacentHTML('beforeend', `<section><h2>Links</h2><ul>${items}</ul></section>`);
+  }
+
+  if (node.data.related_ids?.length && allNodes) {
+    const chips = node.data.related_ids
+      .map((rid) => allNodes.find((n) => n.data.id === rid))
+      .filter(Boolean)
+      .map((n) => `<button class="chip" data-id="${n.data.id}">${escapeHtml(n.data.name)}</button>`)
+      .join('');
+    if (chips) {
+      panel.insertAdjacentHTML('beforeend', `<section><h2>Connected to</h2><div class="chips">${chips}</div></section>`);
+    }
+  }
+
+  if (onNavigate) {
+    panel.querySelectorAll('[data-id]').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        onNavigate(el.dataset.id);
+      });
+    });
   }
 }
 
