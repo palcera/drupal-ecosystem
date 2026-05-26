@@ -154,8 +154,8 @@
           "name": "Tools",
           "group": "code",
           "weight": 0,
-          "description": "Command-line and local-development tools the Drupal community builds and shares.",
-          "links": [],
+          "description": "Command-line, local-development, packaging, and scaffolding tools the Drupal community builds and shares.",
+          "links": [{"label": "Local Development Guide", "url": "https://www.drupal.org/docs/official_docs/local-development-guide"}],
           "related_ids": [],
           "children": [
             {
@@ -172,9 +172,63 @@
               "name": "DDEV",
               "group": "code",
               "weight": 3,
-              "description": "A Docker-based local development environment widely used by Drupal teams; one of several local-dev tools the community relies on.",
+              "description": "Docker-based local development environment recommended by Drupal's official Local Development Guide; the dominant choice for new Drupal projects.",
               "links": [{"label": "ddev.com", "url": "https://ddev.com"}],
               "related_ids": []
+            },
+            {
+              "id": "composer",
+              "name": "Composer",
+              "group": "code",
+              "weight": 3,
+              "description": "PHP dependency manager — the supported way to install, update, and patch Drupal Core and contributed projects.",
+              "links": [{"label": "getcomposer.org", "url": "https://getcomposer.org/"}],
+              "related_ids": ["composer-in-core"]
+            },
+            {
+              "id": "lando",
+              "name": "Lando",
+              "group": "code",
+              "weight": 2,
+              "description": "Another Docker-based local-dev environment popular with Drupal teams, particularly those coming from Pantheon-style workflows.",
+              "links": [{"label": "lando.dev", "url": "https://lando.dev/"}],
+              "related_ids": []
+            },
+            {
+              "id": "drupal-console",
+              "name": "Drupal Console",
+              "group": "code",
+              "weight": 2,
+              "description": "Symfony-Console-based scaffolding CLI. Widely used during Drupal 8/9 era; largely superseded by Drush + Composer + Recipes today.",
+              "links": [],
+              "related_ids": []
+            },
+            {
+              "id": "recipes",
+              "name": "Recipes",
+              "group": "code",
+              "weight": 2,
+              "description": "Drupal 10.3+ mechanism for installable, repeatable site configurations — modules, config, and content together. Powers Drupal CMS.",
+              "links": [{"label": "drupal.org/browse/recipes", "url": "https://www.drupal.org/browse/recipes"}],
+              "related_ids": []
+            },
+            {
+              "id": "api-drupal",
+              "name": "api.drupal.org",
+              "group": "code",
+              "weight": 2,
+              "description": "Generated API documentation site for Drupal Core and major contributed modules — the developer reference.",
+              "links": [{"label": "api.drupal.org", "url": "https://api.drupal.org/"}],
+              "related_ids": []
+            },
+            {
+              "id": "drupal-cms-distro",
+              "name": "Drupal CMS",
+              "group": "code",
+              "weight": 3,
+              "description": "Drupal's official distribution (2025) targeting marketers, designers, and site builders with smart defaults, recipes, and a guided setup. Powered by Drupal Core + Recipes.",
+              "links": [{"label": "new.drupal.org/drupal-cms", "url": "https://new.drupal.org/drupal-cms"}],
+              "related_ids": ["recipes"]
             }
           ]
         }
