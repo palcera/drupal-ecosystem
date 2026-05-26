@@ -12,12 +12,12 @@ export function renderPanel(node, allNodes, onNavigate) {
     panel.insertAdjacentHTML(
       'beforeend',
       `<section class="legend">
-        <p>Click any circle to explore. Each color represents a group:</p>
+        <p>Click any circle to explore the four parts of the Drupal ecosystem:</p>
         <ul>
-          <li><span class="dot dot-code"></span> Code</li>
-          <li><span class="dot dot-community"></span> Community</li>
-          <li><span class="dot dot-private"></span> Private Organizations</li>
-          <li><span class="dot dot-bluefly"></span> Bluefly</li>
+          <li>Code</li>
+          <li>Community</li>
+          <li>Private Organizations</li>
+          <li>Bluefly</li>
         </ul>
       </section>`,
     );

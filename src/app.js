@@ -128,15 +128,13 @@ async function main() {
   console.log(`rendered ${root.descendants().length} nodes`);
 }
 
+// Single monochrome scale from the official Drupal brand palette
+// (drupal.widencollective.com brand portal): Navy -> Blue -> Sky -> tints.
+// All groups share the same scale; depth lightens the shade.
 function groupColor(group, depth) {
-  const palette = {
-    root: ['#222'],
-    code:      ['#1f4f8a', '#3471b8', '#5290d3', '#82b0e2', '#b0cdee'],
-    community: ['#1e6e2a', '#338e3f', '#52ab5e', '#82c58c', '#b0dcb6'],
-    private:   ['#8c1f23', '#b53438', '#d65456', '#e58588', '#f0b0b2'],
-    bluefly:   ['#5e3686', '#7a4ea8', '#9670c3', '#b699d3', '#d3bce4'],
-  }[group] || ['#888'];
-  return palette[Math.min(depth - 1, palette.length - 1)] || palette[0];
+  if (group === 'root') return '#0a1632'; // deeper than Navy for the root backdrop
+  const shades = ['#12285F', '#006AA9', '#009CDE', '#7FC9EC', '#CCEDF9'];
+  return shades[Math.min(depth - 1, shades.length - 1)];
 }
 
 main().catch((err) => {

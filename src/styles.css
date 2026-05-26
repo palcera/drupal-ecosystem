@@ -15,10 +15,5 @@ html, body { margin: 0; height: 100%; font: 16px/1.5 system-ui, sans-serif; }
 .chip { font: inherit; padding: 0.25rem 0.6rem; border: 1px solid #ccc; background: #fff; border-radius: 999px; cursor: pointer; }
 .chip:hover { background: #f0f0f0; }
 circle:focus { outline: 3px solid #ffbf00; outline-offset: 2px; }
-.legend ul { list-style: none; padding: 0; margin: 0.5rem 0 0; }
-.legend li { display: flex; align-items: center; gap: 0.5rem; padding: 0.2rem 0; }
-.dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
-.dot-code { background: #3471b8; }
-.dot-community { background: #338e3f; }
-.dot-private { background: #b53438; }
-.dot-bluefly { background: #7a4ea8; }
+.legend ul { padding-left: 1.25rem; margin: 0.5rem 0 0; }
+.legend li { padding: 0.15rem 0; }
