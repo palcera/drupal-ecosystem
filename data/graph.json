@@ -242,13 +242,64 @@
               "related_ids": [],
               "children": [
                 {
-                  "id": "latam-camps-tbd",
-                  "name": "Regional camps (TBD)",
+                  "id": "costa-rica-drupal-community",
+                  "name": "Costa Rica Drupal Community",
                   "group": "community",
-                  "weight": 2,
-                  "description": "Concrete camps and communities to be named here as we add them.",
-                  "links": [],
-                  "related_ids": []
+                  "weight": 0,
+                  "description": "Active Costa Rican Drupal community; organizes the region's largest free Drupal-and-open-source camp each February.",
+                  "links": [{"label": "drupalcamp.cr", "url": "https://drupalcamp.cr/en"}],
+                  "related_ids": [],
+                  "children": [
+                    {
+                      "id": "drupalcamp-costa-rica",
+                      "name": "DrupalCamp Costa Rica",
+                      "group": "community",
+                      "weight": 3,
+                      "description": "Three-day annual camp held at the University of Costa Rica (Liberia, Guanacaste). Workshops, contribution sprints, talks on Drupal, AI, and the open web — free to attend.",
+                      "links": [{"label": "drupalcamp.cr", "url": "https://drupalcamp.cr/en"}],
+                      "related_ids": []
+                    }
+                  ]
+                },
+                {
+                  "id": "brasil-drupal-community",
+                  "name": "Brasil Drupal Community",
+                  "group": "community",
+                  "weight": 0,
+                  "description": "Brazilian Drupal community reigniting around DrupalCamp Brasil; bridges Drupal with the wider Brazilian PHP ecosystem.",
+                  "links": [{"label": "@drupalcampbrasil", "url": "https://www.instagram.com/drupalcampbrasil/"}],
+                  "related_ids": [],
+                  "children": [
+                    {
+                      "id": "drupalcamp-brasil",
+                      "name": "DrupalCamp Brasil",
+                      "group": "community",
+                      "weight": 2,
+                      "description": "Camp held in southern Brazil (Santa Catarina region) to reconnect Brazilian contributors, agencies, and newcomers.",
+                      "links": [{"label": "drupal.org project", "url": "https://www.drupal.org/project/drupalcamp_brazil_2025"}],
+                      "related_ids": []
+                    }
+                  ]
+                },
+                {
+                  "id": "mexico-drupal-community",
+                  "name": "México Drupal Community",
+                  "group": "community",
+                  "weight": 0,
+                  "description": "Mexican Drupal community centered in Guadalajara; organizes DrupalCamp México.",
+                  "links": [{"label": "DrupalCamp México (Facebook)", "url": "https://www.facebook.com/DrupalCampMx/"}],
+                  "related_ids": [],
+                  "children": [
+                    {
+                      "id": "drupalcamp-mexico",
+                      "name": "DrupalCamp México",
+                      "group": "community",
+                      "weight": 2,
+                      "description": "Mexican community camp organized out of Guadalajara.",
+                      "links": [{"label": "DrupalCamp México (Facebook)", "url": "https://www.facebook.com/DrupalCampMx/"}],
+                      "related_ids": []
+                    }
+                  ]
                 }
               ]
             }
