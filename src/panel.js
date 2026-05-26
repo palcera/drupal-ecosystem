@@ -8,6 +8,21 @@ export function renderPanel(node, allNodes, onNavigate) {
   panel.insertAdjacentHTML('beforeend', `<nav class="crumbs">${crumbs}</nav>`);
   panel.insertAdjacentHTML('beforeend', `<h1 class="name">${escapeHtml(node.data.name)}</h1>`);
 
+  if (!node.parent) {
+    panel.insertAdjacentHTML(
+      'beforeend',
+      `<section class="legend">
+        <p>Click any circle to explore. Each color represents a group:</p>
+        <ul>
+          <li><span class="dot dot-code"></span> Code</li>
+          <li><span class="dot dot-community"></span> Community</li>
+          <li><span class="dot dot-private"></span> Private Organizations</li>
+          <li><span class="dot dot-bluefly"></span> Bluefly</li>
+        </ul>
+      </section>`,
+    );
+  }
+
   if (node.data.description) {
     panel.insertAdjacentHTML('beforeend', `<p class="desc">${escapeHtml(node.data.description)}</p>`);
   }
