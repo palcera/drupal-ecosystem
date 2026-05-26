@@ -98,9 +98,10 @@ async function main() {
 
   function zoom(event, d) {
     focus = d;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const transition = svg
       .transition()
-      .duration(event?.altKey ? 7500 : 750)
+      .duration(reduceMotion ? 0 : (event?.altKey ? 7500 : 750))
       .tween('zoom', () => {
         const i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2]);
         return (t) => zoomTo(i(t));
