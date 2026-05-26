@@ -191,49 +191,26 @@
       "children": [
         {
           "id": "initiatives",
-          "name": "Initiatives",
+          "name": "Initiatives & Working Groups",
           "group": "community",
           "weight": 0,
-          "description": "Project-wide efforts coordinated by community members and the Drupal Association.",
-          "links": [],
+          "description": "Project-wide efforts and working groups coordinated by community members and the Drupal Association.",
+          "links": [{"label": "drupal.org/community", "url": "https://www.drupal.org/community"}],
           "related_ids": [],
           "children": [
-            {
-              "id": "composer-in-core",
-              "name": "Composer Support in Core",
-              "group": "community",
-              "weight": 3,
-              "description": "Initiative to make Composer the supported way to install and update Drupal Core.",
-              "links": [],
-              "related_ids": []
-            },
-            {
-              "id": "drupal-ai",
-              "name": "Drupal AI",
-              "group": "community",
-              "weight": 4,
-              "description": "A growing set of contributed modules and an associated initiative bringing AI capabilities into Drupal site building and editorial workflows.",
-              "links": [{"label": "drupal.org/project/ai", "url": "https://www.drupal.org/project/ai"}],
-              "related_ids": []
-            },
-            {
-              "id": "ixp",
-              "name": "Innovation eXchange Program (IXP)",
-              "group": "community",
-              "weight": 2,
-              "description": "Community program coordinating innovation work and contributions across the project.",
-              "links": [],
-              "related_ids": []
-            },
-            {
-              "id": "cwg",
-              "name": "Community Working Group",
-              "group": "community",
-              "weight": 2,
-              "description": "Volunteer group that supports the health of the Drupal community and upholds its code of conduct.",
-              "links": [{"label": "drupal.org/governance/community-working-group", "url": "https://www.drupal.org/governance/community-working-group"}],
-              "related_ids": []
-            }
+            { "id": "composer-in-core", "name": "Composer Support in Core", "group": "community", "weight": 3, "description": "Initiative making Composer the supported way to install and update Drupal Core.", "links": [], "related_ids": [] },
+            { "id": "drupal-ai", "name": "Drupal AI", "group": "community", "weight": 4, "description": "Contributed modules and an associated initiative bringing AI capabilities into Drupal site building and editorial workflows.", "links": [{"label": "drupal.org/project/ai", "url": "https://www.drupal.org/project/ai"}], "related_ids": [] },
+            { "id": "ixp", "name": "IXP Fellowships", "group": "community", "weight": 2, "description": "Innovation eXchange Program — provides incentives to companies that train inexperienced developers and contribute back.", "links": [], "related_ids": [] },
+            { "id": "cwg", "name": "Community Working Group", "group": "community", "weight": 2, "description": "Volunteer group that supports the health of the Drupal community and upholds the Drupal Code of Conduct.", "links": [{"label": "drupal.org/governance/community-working-group", "url": "https://www.drupal.org/governance/community-working-group"}], "related_ids": [] },
+            { "id": "mentoring-wg", "name": "Mentoring", "group": "community", "weight": 2, "description": "Working group supporting mentors and organising mentoring activities — especially at DrupalCons and DrupalCamps.", "links": [], "related_ids": [] },
+            { "id": "diversity-inclusion", "name": "Diversity & Inclusion", "group": "community", "weight": 2, "description": "Drupal Diversity & Inclusion — continuing conversations and concrete programs on diversity and inclusion within the project.", "links": [], "related_ids": [] },
+            { "id": "promote-drupal", "name": "Promote Drupal", "group": "community", "weight": 2, "description": "Marketing materials and resources for agencies growing Drupal adoption.", "links": [], "related_ids": [] },
+            { "id": "contribution-events", "name": "Contribution Events", "group": "community", "weight": 1, "description": "Promotes contribution sprints and code-together events globally.", "links": [], "related_ids": [] },
+            { "id": "event-organizers", "name": "Event Organizers' Group", "group": "community", "weight": 1, "description": "Supports people organising Drupal-related events worldwide — camps, meetups, summits.", "links": [], "related_ids": [] },
+            { "id": "local-associations", "name": "Local Associations", "group": "community", "weight": 1, "description": "Regional entities organising local efforts, promoting business, and coordinating with the global Drupal Association.", "links": [], "related_ids": [] },
+            { "id": "nonprofit-drupal", "name": "Nonprofit Drupal", "group": "community", "weight": 1, "description": "Community group for people working in or with nonprofits using Drupal.", "links": [{"label": "nonprofitdrupal.org", "url": "https://www.nonprofitdrupal.org/"}], "related_ids": [] },
+            { "id": "neda", "name": "NEDA — Network of European Drupal Agencies", "group": "community", "weight": 1, "description": "European agencies collaborating to advance Drupal development and shared infrastructure.", "links": [], "related_ids": [] },
+            { "id": "global-training-days", "name": "Global Training Days", "group": "community", "weight": 1, "description": "Worldwide free-training events recommended for newcomers to Drupal.", "links": [], "related_ids": [] }
           ]
         },
         {
@@ -323,21 +300,30 @@
                   "name": "Texas",
                   "group": "community",
                   "weight": 0,
-                  "description": "Regional Drupal community in Texas; organizes Texas DrupalCamp annually.",
+                  "description": "Regional Drupal community in Texas; rotates TexasCamp between Austin, Dallas, and San Antonio.",
                   "links": [],
                   "related_ids": [],
                   "children": [
                     {
                       "id": "texas-drupalcamp",
-                      "name": "Texas DrupalCamp",
+                      "name": "TexasCamp",
                       "group": "community",
                       "weight": 2,
-                      "description": "Annual regional DrupalCamp in Texas.",
+                      "description": "Annual statewide Texas Drupal camp (Dallas 2016, Austin 2017, San Antonio 2019).",
                       "links": [],
                       "related_ids": []
                     }
                   ]
-                }
+                },
+                { "id": "boston-drupal", "name": "Boston / New England", "group": "community", "weight": 2, "description": "Boston Drupal Users Group and the broader New England Drupal community.", "links": [{"label": "groups.drupal.org/boston", "url": "https://groups.drupal.org/boston"}], "related_ids": [] },
+                { "id": "nyc-drupal", "name": "New York City", "group": "community", "weight": 2, "description": "Drupal NYC — long-running NYC user group; has hosted NYC Camp.", "links": [{"label": "groups.drupal.org/new-york-city", "url": "https://groups.drupal.org/new-york-city"}], "related_ids": [] },
+                { "id": "chicago-drupal", "name": "Chicago", "group": "community", "weight": 2, "description": "Drupal Chicago user group; hosted DrupalCon Chicago 2011 and again in 2026.", "links": [{"label": "groups.drupal.org/chicago", "url": "https://groups.drupal.org/chicago"}], "related_ids": [] },
+                { "id": "bay-area-drupal", "name": "Bay Area", "group": "community", "weight": 2, "description": "San Francisco Bay Area Drupal community; historic home of BADCamp.", "links": [{"label": "groups.drupal.org/bay-area", "url": "https://groups.drupal.org/bay-area"}], "related_ids": [] },
+                { "id": "pnw-drupal", "name": "Pacific Northwest", "group": "community", "weight": 2, "description": "Portland + Seattle communities; Portland has hosted DrupalCon NA four times (2005, 2013, 2022, 2024).", "links": [], "related_ids": [] },
+                { "id": "denver-drupal", "name": "Denver / Colorado", "group": "community", "weight": 2, "description": "Colorado Drupal community; hosted DrupalCon Denver 2012.", "links": [], "related_ids": [] },
+                { "id": "capital-drupal", "name": "Capital (DC area)", "group": "community", "weight": 2, "description": "Washington DC / Maryland / Virginia community; hosts the annual Capital Camp.", "links": [], "related_ids": [] },
+                { "id": "twin-cities-drupal", "name": "Twin Cities", "group": "community", "weight": 1, "description": "Minneapolis–Saint Paul Drupal community.", "links": [], "related_ids": [] },
+                { "id": "atlanta-drupal", "name": "Atlanta", "group": "community", "weight": 1, "description": "Atlanta Drupal community; hosted DrupalCon NA 2025.", "links": [], "related_ids": [] }
               ]
             },
             {
@@ -349,6 +335,21 @@
               "links": [],
               "related_ids": [],
               "children": [
+                { "id": "germany-drupal", "name": "Germany", "group": "community", "weight": 2, "description": "Drupal Deutschland e.V. plus camps in Munich, Berlin, and Frankfurt. Hosted DrupalCon Munich 2012.", "links": [], "related_ids": [] },
+                { "id": "netherlands-drupal", "name": "Netherlands", "group": "community", "weight": 2, "description": "Dutch Drupal community; organises DrupalJam. Amsterdam hosted DrupalCon Europe in 2005, 2014, 2019; Rotterdam in 2026.", "links": [], "related_ids": [] },
+                { "id": "uk-drupal", "name": "United Kingdom", "group": "community", "weight": 2, "description": "DrupalCamp London and the wider UK community. London hosted DrupalCon Europe 2011.", "links": [], "related_ids": [] },
+                { "id": "france-drupal", "name": "France", "group": "community", "weight": 2, "description": "French Drupal Association; hosted DrupalCon Europe in Paris 2009 and Lille 2023.", "links": [], "related_ids": [] },
+                { "id": "spain-drupal", "name": "Spain", "group": "community", "weight": 2, "description": "DrupalCamp Spain runs annually; Barcelona hosted DrupalCon Europe in 2007, 2015, and 2024.", "links": [{"label": "drupalcamp.es", "url": "https://2025.drupalcamp.es/en"}], "related_ids": [] },
+                { "id": "italy-drupal", "name": "Italy", "group": "community", "weight": 1, "description": "Italian Drupal community; organises DrupalDay Italia.", "links": [], "related_ids": [] },
+                { "id": "belgium-drupal", "name": "Belgium", "group": "community", "weight": 1, "description": "DUG BE vzw (Drupal User Group Belgium). Antwerp hosted the very first DrupalCon in 2005; Brussels in 2006.", "links": [], "related_ids": [] },
+                { "id": "austria-drupal", "name": "Austria", "group": "community", "weight": 1, "description": "Austrian Drupal community; Vienna hosted DrupalCon Europe in 2017 and 2025.", "links": [], "related_ids": [] },
+                { "id": "czechia-drupal", "name": "Czech Republic", "group": "community", "weight": 1, "description": "Czech Drupal community; Prague hosted DrupalCon Europe in 2013 and 2022.", "links": [], "related_ids": [] },
+                { "id": "ireland-drupal", "name": "Ireland", "group": "community", "weight": 1, "description": "Irish Drupal community; Dublin hosted DrupalCon Europe 2016.", "links": [], "related_ids": [] },
+                { "id": "hungary-drupal", "name": "Hungary", "group": "community", "weight": 1, "description": "Hungarian Drupal community; Szeged hosted DrupalCon Europe 2008.", "links": [], "related_ids": [] },
+                { "id": "denmark-drupal", "name": "Denmark", "group": "community", "weight": 1, "description": "Danish Drupal community; Copenhagen hosted DrupalCon Europe 2010.", "links": [], "related_ids": [] },
+                { "id": "poland-drupal", "name": "Poland", "group": "community", "weight": 1, "description": "Polish Drupal community; organises DrupalCamp Poland (2026 confirmed).", "links": [], "related_ids": [] },
+                { "id": "finland-drupal", "name": "Finland", "group": "community", "weight": 1, "description": "Finnish Drupal community; organises DrupalCamp Finland (2026 confirmed).", "links": [], "related_ids": [] },
+                { "id": "switzerland-drupal", "name": "Switzerland", "group": "community", "weight": 1, "description": "Swiss Drupal community.", "links": [], "related_ids": [] },
                 {
                   "id": "european-drupal-association",
                   "name": "European Drupal Association",
