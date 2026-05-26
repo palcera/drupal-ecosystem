@@ -151,7 +151,7 @@
         },
         {
           "id": "tools",
-          "name": "Tools",
+          "name": "Dev Tools",
           "group": "code",
           "weight": 0,
           "description": "Command-line, local-development, packaging, and scaffolding tools the Drupal community builds and shares.",
@@ -168,12 +168,59 @@
               "related_ids": []
             },
             {
-              "id": "ddev",
-              "name": "DDEV",
+              "id": "local-development",
+              "name": "Local Development",
               "group": "code",
-              "weight": 3,
-              "description": "Docker-based local development environment recommended by Drupal's official Local Development Guide; the dominant choice for new Drupal projects.",
-              "links": [{"label": "ddev.com", "url": "https://ddev.com"}],
+              "weight": 0,
+              "description": "Tools developers use to run Drupal on their machine — Docker-based environments, package management, sandboxes.",
+              "links": [{"label": "Local Development Guide", "url": "https://www.drupal.org/docs/official_docs/local-development-guide"}],
+              "related_ids": [],
+              "children": [
+                {
+                  "id": "ddev",
+                  "name": "DDEV",
+                  "group": "code",
+                  "weight": 3,
+                  "description": "Docker-based local development environment recommended by Drupal's official Local Development Guide; the dominant choice for new Drupal projects.",
+                  "links": [{"label": "ddev.com", "url": "https://ddev.com"}],
+                  "related_ids": []
+                }
+              ]
+            },
+            {
+              "id": "devtools-themes",
+              "name": "Themes",
+              "group": "code",
+              "weight": 2,
+              "description": "Placeholder — tooling around theme development (Single Directory Components, Storybook integration, Tailwind/PostCSS pipelines, sub-theming).",
+              "links": [],
+              "related_ids": []
+            },
+            {
+              "id": "devtools-security",
+              "name": "Security",
+              "group": "code",
+              "weight": 2,
+              "description": "Placeholder — security tooling (drupal-check, security advisories, Drupal Steward, automated patching workflows).",
+              "links": [],
+              "related_ids": []
+            },
+            {
+              "id": "devtools-api",
+              "name": "API",
+              "group": "code",
+              "weight": 2,
+              "description": "Placeholder — Drupal's web-service surfaces (JSON:API, REST, GraphQL) and the tools developers use to consume them.",
+              "links": [],
+              "related_ids": []
+            },
+            {
+              "id": "devtools-docs",
+              "name": "Documentation",
+              "group": "code",
+              "weight": 2,
+              "description": "Placeholder — documentation tooling and resources (api.drupal.org, the Drupal User Guide, contributed-module docs).",
+              "links": [],
               "related_ids": []
             },
             {
