@@ -152,10 +152,34 @@
                       "id": "drupalcon-na",
                       "name": "DrupalCon North America",
                       "group": "community",
-                      "weight": 4,
-                      "description": "Annual flagship North American conference organized by the Drupal Association.",
+                      "weight": 0,
+                      "description": "Annual flagship North American conference organized by the Drupal Association since 2005.",
                       "links": [{"label": "events.drupal.org", "url": "https://events.drupal.org"}],
-                      "related_ids": []
+                      "related_ids": [],
+                      "children": [
+                        { "id": "dcna-2005", "name": "2005", "group": "community", "weight": 1, "description": "Portland, OR — ~100 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2006", "name": "2006", "group": "community", "weight": 1, "description": "Vancouver, BC — ~150 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2007", "name": "2007", "group": "community", "weight": 1, "description": "Sunnyvale, CA — ~300 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2008", "name": "2008", "group": "community", "weight": 1, "description": "Boston, MA — 850 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2009", "name": "2009", "group": "community", "weight": 1, "description": "Washington, D.C. — 1,400 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2010", "name": "2010", "group": "community", "weight": 1, "description": "San Francisco, CA — 3,000 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2011", "name": "2011", "group": "community", "weight": 1, "description": "Chicago, IL — 2,881 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2012", "name": "2012", "group": "community", "weight": 1, "description": "Denver, CO — 3,127 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2013", "name": "2013", "group": "community", "weight": 1, "description": "Portland, OR — 3,300 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2014", "name": "2014", "group": "community", "weight": 1, "description": "Austin, TX — 3,357 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2015", "name": "2015", "group": "community", "weight": 1, "description": "Los Angeles, CA — 3,186 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2016", "name": "2016", "group": "community", "weight": 1, "description": "New Orleans, LA — 3,102 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2017", "name": "2017", "group": "community", "weight": 1, "description": "Baltimore, MD — 3,271 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2018", "name": "2018", "group": "community", "weight": 1, "description": "Nashville, TN — 2,899 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2019", "name": "2019", "group": "community", "weight": 1, "description": "Seattle, WA — 3,014 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2020", "name": "2020", "group": "community", "weight": 1, "description": "Online (Global) — 2,395 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2021", "name": "2021", "group": "community", "weight": 1, "description": "Online (North America) — 2,330 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2022", "name": "2022", "group": "community", "weight": 1, "description": "Portland, OR — 1,263 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2023", "name": "2023", "group": "community", "weight": 1, "description": "Pittsburgh, PA — 1,406 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2024", "name": "2024", "group": "community", "weight": 1, "description": "Portland, OR — 1,400 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2025", "name": "2025", "group": "community", "weight": 1, "description": "Atlanta, GA — 1,288 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dcna-2026", "name": "2026", "group": "community", "weight": 1, "description": "Chicago, IL — upcoming.", "links": [{"label": "events.drupal.org/chicago2026", "url": "https://events.drupal.org/chicago2026"}], "related_ids": [] }
+                      ]
                     }
                   ]
                 },
@@ -223,10 +247,34 @@
                       "id": "drupalcon-europe",
                       "name": "DrupalCon Europe",
                       "group": "community",
-                      "weight": 4,
-                      "description": "Annual flagship European conference.",
+                      "weight": 0,
+                      "description": "Annual flagship European conference. The European DrupalCon series has run continuously since 2005 (no Association-organized edition in 2018).",
                       "links": [{"label": "events.drupal.org", "url": "https://events.drupal.org"}],
-                      "related_ids": []
+                      "related_ids": [],
+                      "children": [
+                        { "id": "dceu-2005a", "name": "2005·Antwerp", "group": "community", "weight": 1, "description": "Antwerp, Belgium — the very first DrupalCon (~50 attendees).", "links": [], "related_ids": [] },
+                        { "id": "dceu-2005b", "name": "2005·Amsterdam", "group": "community", "weight": 1, "description": "Amsterdam, Netherlands — ~100 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2006", "name": "2006", "group": "community", "weight": 1, "description": "Brussels, Belgium — 150 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2007", "name": "2007", "group": "community", "weight": 1, "description": "Barcelona, Spain — 450 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2008", "name": "2008", "group": "community", "weight": 1, "description": "Szeged, Hungary — 500 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2009", "name": "2009", "group": "community", "weight": 1, "description": "Paris, France — 850 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2010", "name": "2010", "group": "community", "weight": 1, "description": "Copenhagen, Denmark — 1,200 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2011", "name": "2011", "group": "community", "weight": 1, "description": "London, UK — 1,751 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2012", "name": "2012", "group": "community", "weight": 1, "description": "Munich, Germany — 1,700 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2013", "name": "2013", "group": "community", "weight": 1, "description": "Prague, Czech Republic — 1,830 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2014", "name": "2014", "group": "community", "weight": 1, "description": "Amsterdam, Netherlands — 2,300 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2015", "name": "2015", "group": "community", "weight": 1, "description": "Barcelona, Spain — 2,039 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2016", "name": "2016", "group": "community", "weight": 1, "description": "Dublin, Ireland — 1,787 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2017", "name": "2017", "group": "community", "weight": 1, "description": "Vienna, Austria — 1,670 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2019", "name": "2019", "group": "community", "weight": 1, "description": "Amsterdam, Netherlands — 1,500 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2020", "name": "2020", "group": "community", "weight": 1, "description": "Online — 780 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2021", "name": "2021", "group": "community", "weight": 1, "description": "Online — 934 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2022", "name": "2022", "group": "community", "weight": 1, "description": "Prague, Czech Republic — 1,168 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2023", "name": "2023", "group": "community", "weight": 1, "description": "Lille, France — 1,289 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2024", "name": "2024", "group": "community", "weight": 1, "description": "Barcelona, Spain — 1,087 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2025", "name": "2025", "group": "community", "weight": 1, "description": "Vienna, Austria — 935 attendees.", "links": [], "related_ids": [] },
+                        { "id": "dceu-2026", "name": "2026", "group": "community", "weight": 1, "description": "Rotterdam, Netherlands — upcoming (28 Sep – 1 Oct).", "links": [{"label": "events.drupal.org/rotterdam2026", "url": "https://events.drupal.org/rotterdam2026"}], "related_ids": [] }
+                      ]
                     }
                   ]
                 }
