@@ -243,7 +243,7 @@
               "children": [
                 {
                   "id": "costa-rica-drupal-community",
-                  "name": "Costa Rica Drupal Community",
+                  "name": "Costa Rica",
                   "group": "community",
                   "weight": 0,
                   "description": "Active Costa Rican Drupal community; organizes the region's largest free Drupal-and-open-source camp each February.",
@@ -263,7 +263,7 @@
                 },
                 {
                   "id": "brasil-drupal-community",
-                  "name": "Brasil Drupal Community",
+                  "name": "Brasil",
                   "group": "community",
                   "weight": 0,
                   "description": "Brazilian Drupal community reigniting around DrupalCamp Brasil; bridges Drupal with the wider Brazilian PHP ecosystem.",
@@ -283,7 +283,7 @@
                 },
                 {
                   "id": "mexico-drupal-community",
-                  "name": "México Drupal Community",
+                  "name": "México",
                   "group": "community",
                   "weight": 0,
                   "description": "Mexican Drupal community centered in Guadalajara; organizes DrupalCamp México.",
