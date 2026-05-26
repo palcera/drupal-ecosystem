@@ -21,7 +21,7 @@ export function renderPanel(node, allNodes, onNavigate) {
       `<section class="legend">
         <p>Click any circle to explore the four parts of the Drupal ecosystem:</p>
         <ul>
-          <li>Build with Drupal</li>
+          <li>Framework</li>
           <li>Community</li>
           <li>Partners and Services</li>
           <li>Bluefly</li>
