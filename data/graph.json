@@ -184,6 +184,24 @@
                   "description": "Docker-based local development environment recommended by Drupal's official Local Development Guide; the dominant choice for new Drupal projects.",
                   "links": [{"label": "ddev.com", "url": "https://ddev.com"}],
                   "related_ids": []
+                },
+                {
+                  "id": "composer",
+                  "name": "Composer",
+                  "group": "code",
+                  "weight": 3,
+                  "description": "PHP dependency manager — the supported way to install, update, and patch Drupal Core and contributed projects.",
+                  "links": [{"label": "getcomposer.org", "url": "https://getcomposer.org/"}],
+                  "related_ids": ["composer-in-core"]
+                },
+                {
+                  "id": "lando",
+                  "name": "Lando",
+                  "group": "code",
+                  "weight": 2,
+                  "description": "Another Docker-based local-dev environment popular with Drupal teams, particularly those coming from Pantheon-style workflows.",
+                  "links": [{"label": "lando.dev", "url": "https://lando.dev/"}],
+                  "related_ids": []
                 }
               ]
             },
@@ -221,24 +239,6 @@
               "weight": 2,
               "description": "Placeholder — documentation tooling and resources (api.drupal.org, the Drupal User Guide, contributed-module docs).",
               "links": [],
-              "related_ids": []
-            },
-            {
-              "id": "composer",
-              "name": "Composer",
-              "group": "code",
-              "weight": 3,
-              "description": "PHP dependency manager — the supported way to install, update, and patch Drupal Core and contributed projects.",
-              "links": [{"label": "getcomposer.org", "url": "https://getcomposer.org/"}],
-              "related_ids": ["composer-in-core"]
-            },
-            {
-              "id": "lando",
-              "name": "Lando",
-              "group": "code",
-              "weight": 2,
-              "description": "Another Docker-based local-dev environment popular with Drupal teams, particularly those coming from Pantheon-style workflows.",
-              "links": [{"label": "lando.dev", "url": "https://lando.dev/"}],
               "related_ids": []
             },
             {
