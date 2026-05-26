@@ -49,6 +49,7 @@ async function main() {
       if (focus !== d) {
         zoom(event, d);
         renderPanel(d, allNodes, navigateById);
+        openSheet();
         event.stopPropagation();
       }
     })
@@ -58,11 +59,13 @@ async function main() {
         if (focus !== d) {
           zoom(event, d);
           renderPanel(d, allNodes, navigateById);
+          openSheet();
         }
       } else if (event.key === 'Escape') {
         event.preventDefault();
         zoom(event, root);
         renderPanel(root, allNodes, navigateById);
+        closeSheet();
       }
     });
 
@@ -80,15 +83,31 @@ async function main() {
     .text((d) => d.data.name);
 
   const allNodes = root.descendants();
+  const panelEl = document.getElementById('panel');
+  const isSmallViewport = () => window.matchMedia('(max-width: 639px)').matches;
+  const openSheet = () => { if (isSmallViewport()) panelEl.classList.add('open'); };
+  const closeSheet = () => panelEl.classList.remove('open');
+
   function navigateById(id) {
     const target = allNodes.find((n) => n.data.id === id);
     if (target) {
       zoom(null, target);
       renderPanel(target, allNodes, navigateById);
+      openSheet();
     }
   }
 
-  svg.on('click', (event) => { zoom(event, root); renderPanel(root, allNodes, navigateById); });
+  svg.on('click', (event) => {
+    zoom(event, root);
+    renderPanel(root, allNodes, navigateById);
+    closeSheet();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && panelEl.classList.contains('open')) {
+      closeSheet();
+    }
+  });
+
   zoomTo([root.x, root.y, root.r * 2]);
   renderPanel(root, allNodes, navigateById);
 

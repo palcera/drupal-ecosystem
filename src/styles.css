@@ -22,3 +22,22 @@ circle:focus { outline: 3px solid #ffbf00; outline-offset: 2px; }
   .layout { grid-template-columns: 1fr; grid-template-rows: 60vh 40vh; }
   #panel { border-left: none; border-top: 1px solid #eee; }
 }
+
+@media (max-width: 639px) {
+  .layout { grid-template-columns: 1fr; grid-template-rows: 100vh; }
+  #panel {
+    position: fixed; left: 0; right: 0; bottom: 0; max-height: 75vh; z-index: 10;
+    transform: translateY(100%); transition: transform 200ms ease;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
+    border-top: none; border-radius: 16px 16px 0 0;
+  }
+  #panel::before {
+    content: ''; display: block; width: 40px; height: 4px;
+    background: #ccc; border-radius: 2px; margin: -0.5rem auto 0.75rem;
+  }
+  #panel.open { transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #panel { transition: none; }
+}
