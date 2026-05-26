@@ -26,10 +26,18 @@ jobs:
         run: node scripts/build-fallback.mjs
       - name: Assemble site
         run: |
-          mkdir -p _site
-          cp -r src/* _site/
-          mkdir -p _site/data
+          mkdir -p _site/src _site/data
+          cp -r src/* _site/src/
           cp data/graph.json _site/data/
+          # Root redirect so the bare repo URL forwards to /src/
+          cat > _site/index.html <<'HTML'
+          <!doctype html>
+          <meta charset="utf-8">
+          <title>Drupal Ecosystem</title>
+          <meta http-equiv="refresh" content="0; url=src/">
+          <link rel="canonical" href="src/">
+          <p><a href="src/">Continue to the Drupal Ecosystem diagram</a></p>
+          HTML
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
