@@ -20,19 +20,134 @@
           "id": "drupal-core",
           "name": "Drupal Core",
           "group": "code",
-          "weight": 5,
+          "weight": 0,
           "description": "The core software: PHP framework, content modeling, rendering, configuration, and the foundational modules every Drupal site uses.",
           "links": [{"label": "drupal.org/project/drupal", "url": "https://drupal.org/project/drupal"}],
-          "related_ids": []
+          "related_ids": [],
+          "children": [
+            { "id": "core-action", "name": "Action", "group": "code", "weight": 1, "description": "Trigger configurable actions on events (publish, email, etc.).", "links": [], "related_ids": [] },
+            { "id": "core-block", "name": "Block", "group": "code", "weight": 1, "description": "Place reusable content blocks into theme regions.", "links": [], "related_ids": [] },
+            { "id": "core-book", "name": "Book", "group": "code", "weight": 1, "description": "Build hierarchical, multi-page documentation structures.", "links": [], "related_ids": [] },
+            { "id": "core-breakpoint", "name": "Breakpoint", "group": "code", "weight": 1, "description": "Manage responsive-design breakpoints used by themes and media.", "links": [], "related_ids": [] },
+            { "id": "core-ckeditor5", "name": "CKEditor 5", "group": "code", "weight": 1, "description": "Rich-text WYSIWYG editor integration (current default).", "links": [], "related_ids": [] },
+            { "id": "core-config", "name": "Configuration", "group": "code", "weight": 1, "description": "Manage site configuration via importable/exportable YAML.", "links": [], "related_ids": [] },
+            { "id": "core-contact", "name": "Contact", "group": "code", "weight": 1, "description": "Site-wide and per-user contact forms.", "links": [], "related_ids": [] },
+            { "id": "core-contextual", "name": "Contextual Links", "group": "code", "weight": 1, "description": "Inline edit links that appear on hover for editors.", "links": [], "related_ids": [] },
+            { "id": "core-datetime", "name": "Datetime", "group": "code", "weight": 1, "description": "Date and time field type plus widgets and formatters.", "links": [], "related_ids": [] },
+            { "id": "core-dblog", "name": "Database Logging", "group": "code", "weight": 1, "description": "Record events to the database (the watchdog log).", "links": [], "related_ids": [] },
+            { "id": "core-editor", "name": "Editor", "group": "code", "weight": 1, "description": "Framework that text-format WYSIWYG editors plug into.", "links": [], "related_ids": [] },
+            { "id": "core-field", "name": "Field", "group": "code", "weight": 1, "description": "The Field API: attach typed data to any entity.", "links": [], "related_ids": [] },
+            { "id": "core-file", "name": "File", "group": "code", "weight": 1, "description": "Managed file uploads and the file field type.", "links": [], "related_ids": [] },
+            { "id": "core-help", "name": "Help", "group": "code", "weight": 1, "description": "Module-provided help pages and tooltips.", "links": [], "related_ids": [] },
+            { "id": "core-history", "name": "History", "group": "code", "weight": 1, "description": "Track which nodes a user has read; powers \"new\" markers.", "links": [], "related_ids": [] },
+            { "id": "core-image", "name": "Image", "group": "code", "weight": 1, "description": "Image field type, image styles, derivative generation.", "links": [], "related_ids": [] },
+            { "id": "core-jsonapi", "name": "JSON:API", "group": "code", "weight": 1, "description": "Spec-compliant read/write JSON:API endpoints for every entity.", "links": [], "related_ids": [] },
+            { "id": "core-layout-builder", "name": "Layout Builder", "group": "code", "weight": 1, "description": "Visual page-layout composition with blocks and sections.", "links": [], "related_ids": [] },
+            { "id": "core-link", "name": "Link", "group": "code", "weight": 1, "description": "Link field type with internal/external URL handling.", "links": [], "related_ids": [] },
+            { "id": "core-locale", "name": "Locale", "group": "code", "weight": 1, "description": "Translation management for interface strings and configuration.", "links": [], "related_ids": [] },
+            { "id": "core-media", "name": "Media", "group": "code", "weight": 1, "description": "Reusable media entities (images, video, audio, remote embeds).", "links": [], "related_ids": [] },
+            { "id": "core-migrate", "name": "Migrate", "group": "code", "weight": 1, "description": "ETL framework for migrating data into Drupal from any source.", "links": [], "related_ids": [] },
+            { "id": "core-navigation", "name": "Navigation", "group": "code", "weight": 1, "description": "The modern admin navigation bar (Drupal 11+).", "links": [], "related_ids": [] },
+            { "id": "core-node", "name": "Node", "group": "code", "weight": 1, "description": "Content entity API: pages, articles, custom content types.", "links": [], "related_ids": [] },
+            { "id": "core-page-cache", "name": "Page Cache", "group": "code", "weight": 1, "description": "Cache full pages for anonymous users.", "links": [], "related_ids": [] },
+            { "id": "core-rest", "name": "REST", "group": "code", "weight": 1, "description": "Configurable REST endpoints for entities and views.", "links": [], "related_ids": [] },
+            { "id": "core-search", "name": "Search", "group": "code", "weight": 1, "description": "Basic search index + search pages.", "links": [], "related_ids": [] },
+            { "id": "core-text", "name": "Text", "group": "code", "weight": 1, "description": "Plain and formatted text field types.", "links": [], "related_ids": [] },
+            { "id": "core-user", "name": "User", "group": "code", "weight": 1, "description": "Accounts, roles, permissions — the user entity.", "links": [], "related_ids": [] },
+            { "id": "core-views", "name": "Views", "group": "code", "weight": 1, "description": "Build listings, grids, blocks, and feeds with a query UI.", "links": [], "related_ids": [] }
+          ]
         },
         {
           "id": "contrib-modules",
           "name": "Contributed modules",
           "group": "code",
-          "weight": 5,
-          "description": "Tens of thousands of community-maintained modules and themes that extend Drupal — from Views and Paragraphs to commerce, search, and AI integrations.",
+          "weight": 0,
+          "description": "Tens of thousands of community-maintained modules and themes that extend Drupal — from Views and Paragraphs to commerce, search, and AI integrations. Grouped here by topic with a handful of well-known examples per group.",
           "links": [{"label": "drupal.org/project/project_module", "url": "https://www.drupal.org/project/project_module"}],
-          "related_ids": []
+          "related_ids": [],
+          "children": [
+            {
+              "id": "contrib-admin",
+              "name": "Admin & editor UX",
+              "group": "code",
+              "weight": 0,
+              "description": "Modules that improve the editorial and administrative experience.",
+              "links": [],
+              "related_ids": [],
+              "children": [
+                { "id": "contrib-admin-toolbar", "name": "Admin Toolbar", "group": "code", "weight": 2, "description": "Replaces the default admin menu with a faster, dropdown-driven version. Near-universal install.", "links": [{"label": "drupal.org/project/admin_toolbar", "url": "https://www.drupal.org/project/admin_toolbar"}], "related_ids": [] },
+                { "id": "contrib-diff", "name": "Diff", "group": "code", "weight": 1, "description": "Visual diff between two revisions of any entity.", "links": [{"label": "drupal.org/project/diff", "url": "https://www.drupal.org/project/diff"}], "related_ids": [] }
+              ]
+            },
+            {
+              "id": "contrib-security",
+              "name": "Security & spam",
+              "group": "code",
+              "weight": 0,
+              "description": "Modules that harden Drupal sites against abuse.",
+              "links": [],
+              "related_ids": [],
+              "children": [
+                { "id": "contrib-captcha", "name": "CAPTCHA", "group": "code", "weight": 1, "description": "Pluggable challenge framework with reCAPTCHA, image, math integrations.", "links": [{"label": "drupal.org/project/captcha", "url": "https://www.drupal.org/project/captcha"}], "related_ids": [] },
+                { "id": "contrib-honeypot", "name": "Honeypot", "group": "code", "weight": 1, "description": "Lightweight spam-bot defense via hidden form fields and time traps.", "links": [{"label": "drupal.org/project/honeypot", "url": "https://www.drupal.org/project/honeypot"}], "related_ids": [] }
+              ]
+            },
+            {
+              "id": "contrib-developer",
+              "name": "Developer tools",
+              "group": "code",
+              "weight": 0,
+              "description": "Modules every Drupal developer reaches for.",
+              "links": [],
+              "related_ids": [],
+              "children": [
+                { "id": "contrib-ctools", "name": "Chaos Tools (ctools)", "group": "code", "weight": 2, "description": "Long-running utility library — plugin systems, wizards, object caching — depended on by countless other modules.", "links": [{"label": "drupal.org/project/ctools", "url": "https://www.drupal.org/project/ctools"}], "related_ids": [] },
+                { "id": "contrib-devel", "name": "Devel", "group": "code", "weight": 2, "description": "Developer utility belt: variable dumps, generators, query log, Drush integration.", "links": [{"label": "drupal.org/project/devel", "url": "https://www.drupal.org/project/devel"}], "related_ids": [] }
+              ]
+            },
+            {
+              "id": "contrib-media",
+              "name": "Media & embeds",
+              "group": "code",
+              "weight": 0,
+              "description": "Modules that extend Drupal's media handling.",
+              "links": [],
+              "related_ids": [],
+              "children": [
+                { "id": "contrib-embed", "name": "Embed", "group": "code", "weight": 1, "description": "Framework for embedding entities and external media into CKEditor.", "links": [{"label": "drupal.org/project/embed", "url": "https://www.drupal.org/project/embed"}], "related_ids": [] }
+              ]
+            },
+            {
+              "id": "contrib-analytics",
+              "name": "Analytics & marketing",
+              "group": "code",
+              "weight": 0,
+              "description": "Modules that connect Drupal to analytics and marketing tooling.",
+              "links": [],
+              "related_ids": [],
+              "children": [
+                { "id": "contrib-google-tag", "name": "Google Tag", "group": "code", "weight": 1, "description": "Integrate Google Tag Manager containers with conditional injection rules.", "links": [{"label": "drupal.org/project/google_tag", "url": "https://www.drupal.org/project/google_tag"}], "related_ids": [] }
+              ]
+            },
+            {
+              "id": "contrib-commerce",
+              "name": "Commerce",
+              "group": "code",
+              "weight": 2,
+              "description": "Placeholder — the Drupal Commerce ecosystem (Commerce module + payment/shipping/tax extensions) to be expanded later.",
+              "links": [],
+              "related_ids": []
+            },
+            {
+              "id": "contrib-themes",
+              "name": "Themes & UI",
+              "group": "code",
+              "weight": 2,
+              "description": "Placeholder — front-end themes (Olivero, Claro, Radix, Bootstrap-based, Tailwind-based) to be expanded later.",
+              "links": [],
+              "related_ids": []
+            }
+          ]
         },
         {
           "id": "tools",
@@ -348,6 +463,177 @@
                       "related_ids": []
                     }
                   ]
+                }
+              ]
+            },
+            {
+              "id": "orgs-asia",
+              "name": "Asia",
+              "group": "community",
+              "weight": 0,
+              "description": "Asian Drupal communities and regional DrupalCons.",
+              "links": [],
+              "related_ids": [],
+              "children": [
+                {
+                  "id": "india-drupal-community",
+                  "name": "India",
+                  "group": "community",
+                  "weight": 0,
+                  "description": "Active Indian Drupal community; hosted DrupalCon Asia in Mumbai.",
+                  "links": [],
+                  "related_ids": [],
+                  "children": [
+                    {
+                      "id": "drupalcon-asia-mumbai-2016",
+                      "name": "DrupalCon Asia 2016",
+                      "group": "community",
+                      "weight": 3,
+                      "description": "Mumbai, India — 1,025 attendees. The first DrupalCon held in Asia.",
+                      "links": [],
+                      "related_ids": []
+                    }
+                  ]
+                },
+                {
+                  "id": "singapore-drupal-community",
+                  "name": "Singapore / SEA",
+                  "group": "community",
+                  "weight": 0,
+                  "description": "Singapore and Southeast Asia Drupal community.",
+                  "links": [],
+                  "related_ids": [],
+                  "children": [
+                    {
+                      "id": "drupalcon-singapore-2024",
+                      "name": "DrupalCon Singapore 2024",
+                      "group": "community",
+                      "weight": 2,
+                      "description": "Singapore — 253 attendees.",
+                      "links": [],
+                      "related_ids": []
+                    }
+                  ]
+                },
+                {
+                  "id": "japan-drupal-community",
+                  "name": "Japan",
+                  "group": "community",
+                  "weight": 0,
+                  "description": "Japanese Drupal community.",
+                  "links": [],
+                  "related_ids": [],
+                  "children": [
+                    {
+                      "id": "drupalcon-nara-2025",
+                      "name": "DrupalCon Nara 2025",
+                      "group": "community",
+                      "weight": 2,
+                      "description": "Nara, Japan — 214 attendees.",
+                      "links": [],
+                      "related_ids": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "orgs-oceania",
+              "name": "Oceania",
+              "group": "community",
+              "weight": 0,
+              "description": "Drupal community organizations and events across Australia and New Zealand.",
+              "links": [],
+              "related_ids": [],
+              "children": [
+                {
+                  "id": "australia-drupal-community",
+                  "name": "Australia",
+                  "group": "community",
+                  "weight": 0,
+                  "description": "Australian Drupal community; hosts DrupalSouth and previously DrupalCon Sydney.",
+                  "links": [],
+                  "related_ids": [],
+                  "children": [
+                    {
+                      "id": "drupalcon-sydney-2013",
+                      "name": "DrupalCon Sydney 2013",
+                      "group": "community",
+                      "weight": 2,
+                      "description": "Sydney, Australia — 450 attendees.",
+                      "links": [],
+                      "related_ids": []
+                    },
+                    {
+                      "id": "drupalsouth-au",
+                      "name": "DrupalSouth (AU)",
+                      "group": "community",
+                      "weight": 2,
+                      "description": "Twice-yearly regional conference rotating across Australia and New Zealand cities. Placeholder — to be expanded with per-edition history.",
+                      "links": [],
+                      "related_ids": []
+                    }
+                  ]
+                },
+                {
+                  "id": "newzealand-drupal-community",
+                  "name": "New Zealand",
+                  "group": "community",
+                  "weight": 0,
+                  "description": "New Zealand Drupal community; co-hosts the DrupalSouth conference series with Australia.",
+                  "links": [],
+                  "related_ids": [],
+                  "children": [
+                    {
+                      "id": "drupalsouth-nz-tbd",
+                      "name": "DrupalSouth NZ (TBD)",
+                      "group": "community",
+                      "weight": 2,
+                      "description": "Placeholder — specific NZ DrupalSouth editions to be added with verified data.",
+                      "links": [],
+                      "related_ids": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "orgs-africa",
+              "name": "Africa",
+              "group": "community",
+              "weight": 0,
+              "description": "Drupal communities and camps across Africa.",
+              "links": [],
+              "related_ids": [],
+              "children": [
+                {
+                  "id": "south-africa-drupal-community",
+                  "name": "South Africa",
+                  "group": "community",
+                  "weight": 0,
+                  "description": "Placeholder — to be verified and filled with the active South African Drupal community contacts and events.",
+                  "links": [],
+                  "related_ids": [],
+                  "children": [
+                    {
+                      "id": "drupalcamp-sa-tbd",
+                      "name": "DrupalCamp SA (TBD)",
+                      "group": "community",
+                      "weight": 2,
+                      "description": "Placeholder — to be replaced with verified DrupalCamp South Africa editions.",
+                      "links": [],
+                      "related_ids": []
+                    }
+                  ]
+                },
+                {
+                  "id": "africa-other-tbd",
+                  "name": "Other African camps (TBD)",
+                  "group": "community",
+                  "weight": 2,
+                  "description": "Placeholder — Drupal camps and meetups elsewhere on the continent (Nigeria, Kenya, Egypt, Morocco, etc.) to be added as verified.",
+                  "links": [],
+                  "related_ids": []
                 }
               ]
             }
