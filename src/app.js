@@ -9,17 +9,7 @@ const VIEW = 800;
 // group → that subtree's depth-4 reveals; etc.
 const DEPTH_BUDGET = 3;
 
-async function main() {
-  const data = await fetch(DATA_URL).then((r) => {
-    if (!r.ok) throw new Error(`HTTP ${r.status} loading ${DATA_URL}`);
-    return r.json();
-  });
-
-  const errors = validate(data);
-  if (errors.length) {
-    throw new Error('graph.json failed validation:\n  - ' + errors.join('\n  - '));
-  }
-
+export function render(data) {
   const root = d3.hierarchy(data).sum((d) => (d.children?.length ? 0 : (d.weight || 1)));
   d3.pack().size([VIEW, VIEW]).padding(6)(root);
 
@@ -272,7 +262,7 @@ function paintLines(sel, lines, fontSize) {
   });
 }
 
-function showError(message) {
+export function showError(message) {
   const el = document.createElement('div');
   el.className = 'load-error';
   el.innerHTML = `
@@ -284,8 +274,3 @@ function showError(message) {
   el.querySelector('button').addEventListener('click', () => location.reload());
   document.body.prepend(el);
 }
-
-main().catch((err) => {
-  console.error(err);
-  showError(err.message);
-});

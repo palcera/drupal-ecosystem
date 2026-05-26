@@ -1,0 +1,88 @@
+/* Force-directed view tweaks layered on top of styles.css */
+
+#viz svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: grab;
+  background: var(--bg);
+}
+
+#viz svg:active { cursor: grabbing; }
+
+.fg-link {
+  stroke: var(--node-2);
+  stroke-opacity: 0.45;
+  stroke-width: 1.2;
+}
+
+.fg-link.cross {
+  stroke: var(--node-4);
+  stroke-opacity: 0.7;
+  stroke-dasharray: 4 3;
+  stroke-width: 1.4;
+}
+
+.fg-node {
+  cursor: pointer;
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 1.2;
+}
+
+.fg-node:hover { stroke-width: 2.5; }
+
+.fg-node.expanded { stroke: #fff; stroke-width: 2.5; }
+
+.fg-label {
+  fill: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: rgba(0, 0, 0, 0.6);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.fg-label.small { font-size: 10px; }
+
+.fg-legend {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(10, 26, 58, 0.85);
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--fg);
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fg-legend .swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.fg-legend .dashed {
+  display: inline-block;
+  width: 14px;
+  border-top: 2px dashed var(--node-4);
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.fg-legend .solid {
+  display: inline-block;
+  width: 14px;
+  border-top: 2px solid var(--node-2);
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+#viz { position: relative; }

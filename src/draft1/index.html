@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Drupal Ecosystem — Draft 1: Community-centric</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" />
+  <link rel="stylesheet" href="../tokens.css" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <noscript>
+    <p class="noscript-banner">
+      This page uses JavaScript to render an interactive diagram. <a href="../fallback.html">Browse the text version.</a>
+    </p>
+  </noscript>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-header__brand" href="../" aria-label="Drupal Ecosystem — back to main view">
+        <strong>Drupal Ecosystem</strong>
+      </a>
+      <nav class="site-nav" aria-label="Drafts">
+        <ul>
+          <li><a href="../">Main</a></li>
+          <li><a href="./" aria-current="page"><strong>Draft 1</strong></a></li>
+          <li><a href="../draft2/">Draft 2</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="container hero__inner">
+      <section id="viz" aria-label="Community-centric Drupal ecosystem diagram"></section>
+      <aside id="panel" aria-live="polite"></aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="site-footer__line">
+        <span class="site-footer__label">Draft 1:</span>
+        Same circle-packing visualization, reparented so the Community contains everything else.
+      </p>
+      <p class="site-footer__line">
+        <span class="site-footer__label">Maintainers:</span>
+        <a href="https://bluefly.io" target="_blank" rel="noopener noreferrer">Bluefly</a>
+        &nbsp;+&nbsp;
+        <a href="https://github.com/palcera" target="_blank" rel="noopener noreferrer">Palcera</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
