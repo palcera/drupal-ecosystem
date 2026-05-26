@@ -4,6 +4,10 @@ import { renderPanel } from './panel.js';
 
 const DATA_URL = '../data/graph.json';
 const VIEW = 800;
+// Progressive disclosure: only show circles within this many depth levels of the
+// current focus. At root (focus depth 0) → depths 1..3 visible; zoom into a
+// group → that subtree's depth-4 reveals; etc.
+const DEPTH_BUDGET = 3;
 
 async function main() {
   const data = await fetch(DATA_URL).then((r) => {
@@ -90,6 +94,19 @@ async function main() {
     fitLabel(this, d.data.name, d.r * 2);
   });
 
+  function isWithinDepthBudget(d) {
+    return d.depth <= focus.depth + DEPTH_BUDGET;
+  }
+  function applyDepthBudget() {
+    node.style('display', (d) => (isWithinDepthBudget(d) ? null : 'none'));
+    label
+      .style('display', (d) =>
+        (d.parent === focus && isWithinDepthBudget(d)) ? 'inline' : 'none',
+      )
+      .style('fill-opacity', (d) => (d.parent === focus && isWithinDepthBudget(d) ? 1 : 0));
+  }
+  applyDepthBudget();
+
   const allNodes = root.descendants();
   const panelEl = document.getElementById('panel');
   const isSmallViewport = () => window.matchMedia('(max-width: 639px)').matches;
@@ -129,6 +146,9 @@ async function main() {
 
   function zoom(event, d) {
     focus = d;
+    // Reveal newly-in-budget circles before the transition starts; hide
+    // newly-out-of-budget circles after it ends (so they don't pop mid-zoom).
+    node.filter((c) => isWithinDepthBudget(c)).style('display', null);
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const transition = svg
       .transition()
@@ -136,19 +156,22 @@ async function main() {
       .tween('zoom', () => {
         const i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2]);
         return (t) => zoomTo(i(t));
+      })
+      .on('end', () => {
+        node.filter((c) => !isWithinDepthBudget(c)).style('display', 'none');
       });
 
     label
-      .filter(function (d) {
-        return d.parent === focus || this.style.display === 'inline';
+      .filter(function (lbl) {
+        return (lbl.parent === focus && isWithinDepthBudget(lbl)) || this.style.display === 'inline';
       })
       .transition(transition)
-      .style('fill-opacity', (d) => (d.parent === focus ? 1 : 0))
-      .on('start', function (d) {
-        if (d.parent === focus) this.style.display = 'inline';
+      .style('fill-opacity', (lbl) => (lbl.parent === focus && isWithinDepthBudget(lbl) ? 1 : 0))
+      .on('start', function (lbl) {
+        if (lbl.parent === focus && isWithinDepthBudget(lbl)) this.style.display = 'inline';
       })
-      .on('end', function (d) {
-        if (d.parent !== focus) this.style.display = 'none';
+      .on('end', function (lbl) {
+        if (lbl.parent !== focus || !isWithinDepthBudget(lbl)) this.style.display = 'none';
       });
   }
 
