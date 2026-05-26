@@ -1,5 +1,6 @@
 // Boot
 import { validate } from './validate.js';
+import { renderPanel } from './panel.js';
 
 const DATA_URL = '../data/graph.json';
 const VIEW = 800;
@@ -21,7 +22,7 @@ async function main() {
   const svg = d3
     .select('#viz')
     .append('svg')
-    .attr('viewBox', `0 0 ${VIEW} ${VIEW}`)
+    .attr('viewBox', `${-VIEW / 2} ${-VIEW / 2} ${VIEW} ${VIEW}`)
     .attr('preserveAspectRatio', 'xMidYMid meet')
     .style('cursor', 'pointer');
 
@@ -40,6 +41,7 @@ async function main() {
     .on('click', (event, d) => {
       if (focus !== d) {
         zoom(event, d);
+        renderPanel(d);
         event.stopPropagation();
       }
     });
@@ -57,8 +59,9 @@ async function main() {
     .attr('pointer-events', 'none')
     .text((d) => d.data.name);
 
-  svg.on('click', (event) => zoom(event, root));
+  svg.on('click', (event) => { zoom(event, root); renderPanel(root); });
   zoomTo([root.x, root.y, root.r * 2]);
+  renderPanel(root);
 
   function zoomTo(v) {
     const k = VIEW / v[2];
