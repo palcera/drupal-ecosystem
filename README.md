@@ -1,5 +1,7 @@
 # Drupal Ecosystem Graph
 
+**Live:** https://palcera.github.io/drupal-ecosystem/src/
+
 A static, interactive D3 diagram explaining the Drupal ecosystem (Code, Community, Private Organizations, Bluefly) for newcomers.
 
 - **Design doc:** `docs/plans/2026-05-25-drupal-ecosystem-graph-design.md`
