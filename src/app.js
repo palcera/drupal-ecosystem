@@ -40,7 +40,6 @@ async function main() {
     .data(root.descendants().slice(1))
     .join('circle')
     .attr('fill', (d) => groupColor(d.data.group, d.depth))
-    .attr('stroke', '#fff')
     .attr('pointer-events', (d) => (!d.children ? 'none' : null))
     .attr('tabindex', 0)
     .attr('role', 'button')
@@ -82,11 +81,8 @@ async function main() {
     .attr('text-anchor', 'middle')
     .attr('font-weight', 700)
     .attr('fill', '#fff')
-    .attr('stroke', 'rgba(10, 26, 58, 0.85)')
-    .attr('stroke-width', 3)
-    .attr('paint-order', 'stroke fill')
-    .style('stroke-linejoin', 'round')
-    .attr('pointer-events', 'none');
+    .attr('pointer-events', 'none')
+    .style('filter', 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55))');
 
   // Fit each label to its circle: pick a font size, wrap onto multiple lines if
   // needed, hide entirely if even the shrunken+wrapped version overflows.

@@ -201,6 +201,17 @@ body {
 .legend li { padding: 0.15rem 0; }
 
 /* ── SVG nodes ──────────────────────────────────────── */
+circle {
+  transition: filter 150ms ease, stroke-width 150ms ease;
+  stroke: var(--node-3);
+  stroke-width: 0;
+}
+
+circle:hover {
+  stroke-width: 2.5px;
+  filter: brightness(1.18) drop-shadow(0 0 12px rgba(0, 156, 222, 0.55));
+}
+
 circle:focus {
   outline: 3px solid var(--accent);
   outline-offset: 2px;
