@@ -11,41 +11,406 @@
       "id": "code",
       "name": "Code",
       "group": "code",
-      "weight": 5,
+      "weight": 0,
       "description": "Drupal Core, contributed modules, and the tools developers use to build and run Drupal sites.",
       "links": [{"label": "drupal.org/project/drupal", "url": "https://drupal.org/project/drupal"}],
       "related_ids": [],
-      "children": []
+      "children": [
+        {
+          "id": "drupal-core",
+          "name": "Drupal Core",
+          "group": "code",
+          "weight": 5,
+          "description": "The core software: PHP framework, content modeling, rendering, configuration, and the foundational modules every Drupal site uses.",
+          "links": [{"label": "drupal.org/project/drupal", "url": "https://drupal.org/project/drupal"}],
+          "related_ids": []
+        },
+        {
+          "id": "contrib-modules",
+          "name": "Contributed modules",
+          "group": "code",
+          "weight": 5,
+          "description": "Tens of thousands of community-maintained modules and themes that extend Drupal — from Views and Paragraphs to commerce, search, and AI integrations.",
+          "links": [{"label": "drupal.org/project/project_module", "url": "https://www.drupal.org/project/project_module"}],
+          "related_ids": []
+        },
+        {
+          "id": "tools",
+          "name": "Tools",
+          "group": "code",
+          "weight": 0,
+          "description": "Command-line and local-development tools the Drupal community builds and shares.",
+          "links": [],
+          "related_ids": [],
+          "children": [
+            {
+              "id": "drush",
+              "name": "Drush",
+              "group": "code",
+              "weight": 3,
+              "description": "The Drupal Shell — the standard command-line tool for administering Drupal sites: cache clears, config sync, user management, scripting.",
+              "links": [{"label": "drush.org", "url": "https://www.drush.org"}],
+              "related_ids": []
+            },
+            {
+              "id": "ddev",
+              "name": "DDEV",
+              "group": "code",
+              "weight": 3,
+              "description": "A Docker-based local development environment widely used by Drupal teams; one of several local-dev tools the community relies on.",
+              "links": [{"label": "ddev.com", "url": "https://ddev.com"}],
+              "related_ids": []
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "community",
       "name": "Community",
       "group": "community",
-      "weight": 5,
+      "weight": 0,
       "description": "The people, initiatives, and organizations behind Drupal — globally and regionally.",
-      "links": [{"label": "drupal.org/community", "url": "https://drupal.org/community"}],
+      "links": [{"label": "drupal.org/community", "url": "https://www.drupal.org/community"}],
       "related_ids": [],
-      "children": []
+      "children": [
+        {
+          "id": "initiatives",
+          "name": "Initiatives",
+          "group": "community",
+          "weight": 0,
+          "description": "Project-wide efforts coordinated by community members and the Drupal Association.",
+          "links": [],
+          "related_ids": [],
+          "children": [
+            {
+              "id": "composer-in-core",
+              "name": "Composer Support in Core",
+              "group": "community",
+              "weight": 3,
+              "description": "Initiative to make Composer the supported way to install and update Drupal Core.",
+              "links": [],
+              "related_ids": []
+            },
+            {
+              "id": "drupal-ai",
+              "name": "Drupal AI",
+              "group": "community",
+              "weight": 4,
+              "description": "A growing set of contributed modules and an associated initiative bringing AI capabilities into Drupal site building and editorial workflows.",
+              "links": [{"label": "drupal.org/project/ai", "url": "https://www.drupal.org/project/ai"}],
+              "related_ids": []
+            },
+            {
+              "id": "ixp",
+              "name": "Innovation eXchange Program (IXP)",
+              "group": "community",
+              "weight": 2,
+              "description": "Community program coordinating innovation work and contributions across the project.",
+              "links": [],
+              "related_ids": []
+            },
+            {
+              "id": "cwg",
+              "name": "Community Working Group",
+              "group": "community",
+              "weight": 2,
+              "description": "Volunteer group that supports the health of the Drupal community and upholds its code of conduct.",
+              "links": [{"label": "drupal.org/governance/community-working-group", "url": "https://www.drupal.org/governance/community-working-group"}],
+              "related_ids": []
+            }
+          ]
+        },
+        {
+          "id": "organizations",
+          "name": "Organizations",
+          "group": "community",
+          "weight": 0,
+          "description": "Regional and national associations that organize the community on the ground.",
+          "links": [],
+          "related_ids": [],
+          "children": [
+            {
+              "id": "orgs-us",
+              "name": "United States",
+              "group": "community",
+              "weight": 0,
+              "description": "US-based Drupal community organizations and their events.",
+              "links": [],
+              "related_ids": [],
+              "children": [
+                {
+                  "id": "us-drupal-association",
+                  "name": "Drupal Association",
+                  "group": "community",
+                  "weight": 0,
+                  "description": "The non-profit that supports the Drupal project worldwide, runs drupal.org, and organizes the flagship DrupalCon conferences.",
+                  "links": [{"label": "association.drupal.org", "url": "https://www.drupal.org/association"}],
+                  "related_ids": [],
+                  "children": [
+                    {
+                      "id": "drupalcon-na",
+                      "name": "DrupalCon North America",
+                      "group": "community",
+                      "weight": 4,
+                      "description": "Annual flagship North American conference organized by the Drupal Association.",
+                      "links": [{"label": "events.drupal.org", "url": "https://events.drupal.org"}],
+                      "related_ids": []
+                    }
+                  ]
+                },
+                {
+                  "id": "florida-drupal-community",
+                  "name": "Florida Drupal Community",
+                  "group": "community",
+                  "weight": 0,
+                  "description": "Regional Drupal community in Florida; organizes Florida DrupalCamp annually.",
+                  "links": [],
+                  "related_ids": [],
+                  "children": [
+                    {
+                      "id": "florida-drupalcamp",
+                      "name": "Florida DrupalCamp",
+                      "group": "community",
+                      "weight": 2,
+                      "description": "Annual regional DrupalCamp in Florida.",
+                      "links": [],
+                      "related_ids": []
+                    }
+                  ]
+                },
+                {
+                  "id": "texas-drupal-community",
+                  "name": "Texas Drupal Community",
+                  "group": "community",
+                  "weight": 0,
+                  "description": "Regional Drupal community in Texas; organizes Texas DrupalCamp annually.",
+                  "links": [],
+                  "related_ids": [],
+                  "children": [
+                    {
+                      "id": "texas-drupalcamp",
+                      "name": "Texas DrupalCamp",
+                      "group": "community",
+                      "weight": 2,
+                      "description": "Annual regional DrupalCamp in Texas.",
+                      "links": [],
+                      "related_ids": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "orgs-eu",
+              "name": "Europe",
+              "group": "community",
+              "weight": 0,
+              "description": "European Drupal community organizations and their events.",
+              "links": [],
+              "related_ids": [],
+              "children": [
+                {
+                  "id": "european-drupal-association",
+                  "name": "European Drupal Association",
+                  "group": "community",
+                  "weight": 0,
+                  "description": "Coordinates the European DrupalCon and supports regional camps across Europe.",
+                  "links": [],
+                  "related_ids": [],
+                  "children": [
+                    {
+                      "id": "drupalcon-europe",
+                      "name": "DrupalCon Europe",
+                      "group": "community",
+                      "weight": 4,
+                      "description": "Annual flagship European conference.",
+                      "links": [{"label": "events.drupal.org", "url": "https://events.drupal.org"}],
+                      "related_ids": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "orgs-latam",
+              "name": "Latin America",
+              "group": "community",
+              "weight": 0,
+              "description": "Drupal community organizations and camps across Latin America.",
+              "links": [],
+              "related_ids": [],
+              "children": [
+                {
+                  "id": "latam-camps-tbd",
+                  "name": "Regional camps (TBD)",
+                  "group": "community",
+                  "weight": 2,
+                  "description": "Concrete camps and communities to be named here as we add them.",
+                  "links": [],
+                  "related_ids": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "private",
       "name": "Private Organizations",
       "group": "private",
-      "weight": 3,
+      "weight": 0,
       "description": "Companies that build products, sell services, sponsor events, and employ Drupal contributors.",
       "links": [],
       "related_ids": [],
-      "children": []
+      "children": [
+        {
+          "id": "private-us",
+          "name": "United States",
+          "group": "private",
+          "weight": 0,
+          "description": "US-based Drupal companies.",
+          "links": [],
+          "related_ids": [],
+          "children": [
+            {
+              "id": "acquia",
+              "name": "Acquia",
+              "group": "private",
+              "weight": 5,
+              "description": "The largest commercial Drupal-focused vendor; provides hosting, digital experience products, and is a long-time Drupal Association sponsor.",
+              "links": [{"label": "acquia.com", "url": "https://www.acquia.com"}],
+              "related_ids": ["drupalcon-na"]
+            },
+            {
+              "id": "pantheon",
+              "name": "Pantheon",
+              "group": "private",
+              "weight": 4,
+              "description": "Web ops platform for Drupal (and WordPress); hosting, workflow tooling, and CDN.",
+              "links": [{"label": "pantheon.io", "url": "https://pantheon.io"}],
+              "related_ids": []
+            },
+            {
+              "id": "palantir-net",
+              "name": "Palantir.net",
+              "group": "private",
+              "weight": 3,
+              "description": "Chicago-based Drupal agency serving higher-ed, healthcare, and large publishers.",
+              "links": [{"label": "palantir.net", "url": "https://www.palantir.net"}],
+              "related_ids": []
+            },
+            {
+              "id": "four-kitchens",
+              "name": "Four Kitchens",
+              "group": "private",
+              "weight": 3,
+              "description": "Distributed Drupal agency working on large-scale publishing and government sites.",
+              "links": [{"label": "fourkitchens.com", "url": "https://www.fourkitchens.com"}],
+              "related_ids": []
+            },
+            {
+              "id": "tag1",
+              "name": "Tag1 Consulting",
+              "group": "private",
+              "weight": 3,
+              "description": "Engineering-heavy consultancy specializing in Drupal performance, scaling, and migrations.",
+              "links": [{"label": "tag1consulting.com", "url": "https://www.tag1consulting.com"}],
+              "related_ids": []
+            },
+            {
+              "id": "kanopi",
+              "name": "Kanopi Studios",
+              "group": "private",
+              "weight": 3,
+              "description": "Design and Drupal/WordPress agency focused on mission-driven organizations.",
+              "links": [{"label": "kanopi.com", "url": "https://kanopi.com"}],
+              "related_ids": []
+            }
+          ]
+        },
+        {
+          "id": "private-latam",
+          "name": "Latin America",
+          "group": "private",
+          "weight": 0,
+          "description": "Latin American Drupal companies.",
+          "links": [],
+          "related_ids": [],
+          "children": [
+            {
+              "id": "seed-co",
+              "name": "Seed",
+              "group": "private",
+              "weight": 2,
+              "description": "Colombia-based Drupal team.",
+              "links": [],
+              "related_ids": []
+            },
+            {
+              "id": "paralleldev",
+              "name": "ParallelDev",
+              "group": "private",
+              "weight": 2,
+              "description": "Costa Rica-based Drupal team.",
+              "links": [],
+              "related_ids": []
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "bluefly",
       "name": "Bluefly",
       "group": "bluefly",
-      "weight": 2,
+      "weight": 0,
       "description": "A platform sustaining independent developers and small companies who build community, tools, and products across the Drupal ecosystem.",
       "links": [{"label": "bluefly.io", "url": "https://bluefly.io"}],
       "related_ids": [],
-      "children": []
+      "children": [
+        {
+          "id": "bluefly-indies",
+          "name": "Independent Developers",
+          "group": "bluefly",
+          "weight": 0,
+          "description": "Individual contributors and freelancers whose work Bluefly supports.",
+          "links": [],
+          "related_ids": [],
+          "children": [
+            {
+              "id": "bluefly-indies-tbd",
+              "name": "Examples (TBD)",
+              "group": "bluefly",
+              "weight": 3,
+              "description": "Independent developers to be named here with their consent.",
+              "links": [],
+              "related_ids": []
+            }
+          ]
+        },
+        {
+          "id": "bluefly-small-cos",
+          "name": "Small Companies",
+          "group": "bluefly",
+          "weight": 0,
+          "description": "Small Drupal-focused companies whose work Bluefly supports.",
+          "links": [],
+          "related_ids": [],
+          "children": [
+            {
+              "id": "bluefly-small-cos-tbd",
+              "name": "Examples (TBD)",
+              "group": "bluefly",
+              "weight": 3,
+              "description": "Small companies to be named here with their consent.",
+              "links": [],
+              "related_ids": []
+            }
+          ]
+        }
+      ]
     }
   ]
 }
