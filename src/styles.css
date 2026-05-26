@@ -119,8 +119,17 @@ body {
 /* ── Hero / main ────────────────────────────────────── */
 .hero {
   display: flex;
+  flex-direction: column;
   align-items: stretch;
   min-height: 0;
+}
+
+.hero__title {
+  font: var(--weight-bold) clamp(2rem, 4vw, 3rem) / 1.1 var(--font-body);
+  letter-spacing: -0.015em;
+  color: var(--fg);
+  margin: var(--space-xl) 0 var(--space-md);
+  max-width: 24ch;
 }
 
 .hero__inner {
@@ -172,7 +181,7 @@ body {
 
 .desc { margin: 0 0 var(--space-md); color: var(--fg-muted); font-size: 1.05rem; line-height: 1.55; }
 
-#panel h2 {
+#panel h3 {
   font: var(--weight-bold) 0.75rem / 1.2 var(--font-body);
   text-transform: uppercase;
   letter-spacing: 0.08em;
