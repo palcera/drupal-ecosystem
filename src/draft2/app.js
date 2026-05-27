@@ -285,11 +285,14 @@ function render({ nodes, hierarchyLinks, crossLinks }) {
   function renderPanel(node) {
     const panel = document.getElementById('panel');
     panel.innerHTML = '';
-    const headingTag = node.depth === 0 ? 'h1' : 'h2';
-    panel.insertAdjacentHTML(
-      'beforeend',
-      `<${headingTag} class="name">${escapeHtml(node.name)}</${headingTag}>`,
-    );
+    // The page H1 already names this view; only show a panel heading once
+    // the user drills into a specific node (depth > 0).
+    if (node.depth > 0) {
+      panel.insertAdjacentHTML(
+        'beforeend',
+        `<h2 class="name">${escapeHtml(node.name)}</h2>`,
+      );
+    }
     if (node.description) {
       panel.insertAdjacentHTML('beforeend', `<p class="desc">${escapeHtml(node.description)}</p>`);
     }
