@@ -163,6 +163,23 @@ function render({ nodes, hierarchyLinks, crossLinks }) {
     return GROUP_COLOR[d.pillar] || GROUP_COLOR.code;
   }
 
+  // Selections are reassigned each update() and read by the tick handler.
+  let linkSel = linkLayer.selectAll('line');
+  let nodeSel = nodeLayer.selectAll('circle');
+  let labelSel = labelLayer.selectAll('text');
+
+  simulation.on('tick', () => {
+    linkSel
+      .attr('x1', (d) => d.source.x)
+      .attr('y1', (d) => d.source.y)
+      .attr('x2', (d) => d.target.x)
+      .attr('y2', (d) => d.target.y);
+    nodeSel.attr('cx', (d) => d.x).attr('cy', (d) => d.y);
+    labelSel
+      .attr('x', (d) => d.x)
+      .attr('y', (d) => d.y + nodeRadius(d) + 12);
+  });
+
   function update() {
     const visible = computeVisible(nodes, expanded);
     const visibleNodes = nodes.filter((n) => visible.has(n.id));
@@ -176,73 +193,51 @@ function render({ nodes, hierarchyLinks, crossLinks }) {
 
     // Re-bind data, keeping object identity stable across updates (so the
     // simulation can preserve positions).
-    const linkSel = linkLayer
+    linkSel = linkLayer
       .selectAll('line')
       .data(visibleLinks, (d) => `${typeof d.source === 'object' ? d.source.id : d.source}|${typeof d.target === 'object' ? d.target.id : d.target}|${d.type}`)
-      .join(
-        (enter) => enter.append('line').attr('class', (d) => `fg-link ${d.type === 'cross' ? 'cross' : ''}`),
-        (update) => update,
-        (exit) => exit.remove(),
+      .join((enter) =>
+        enter.append('line').attr('class', (d) => `fg-link ${d.type === 'cross' ? 'cross' : ''}`),
       );
 
-    const nodeSel = nodeLayer
+    nodeSel = nodeLayer
       .selectAll('circle')
       .data(visibleNodes, (d) => d.id)
-      .join(
-        (enter) => {
-          const c = enter
-            .append('circle')
-            .attr('class', 'fg-node')
-            .attr('r', (d) => nodeRadius(d))
-            .attr('fill', (d) => nodeColor(d))
-            .on('click', (event, d) => {
-              event.stopPropagation();
-              if (d.hasChildren) {
-                if (expanded.has(d.id)) expanded.delete(d.id);
-                else expanded.add(d.id);
-                update();
-              }
-              renderPanel(d);
-            })
-            .call(drag(simulation));
-          c.append('title').text((d) => d.name);
-          return c;
-        },
-        (update) =>
-          update.classed('expanded', (d) => expanded.has(d.id) && d.hasChildren),
-        (exit) => exit.remove(),
-      );
+      .join((enter) => {
+        const c = enter
+          .append('circle')
+          .attr('class', 'fg-node')
+          .attr('r', (d) => nodeRadius(d))
+          .attr('fill', (d) => nodeColor(d))
+          .on('click', (event, d) => {
+            event.stopPropagation();
+            if (d.hasChildren) {
+              if (expanded.has(d.id)) expanded.delete(d.id);
+              else expanded.add(d.id);
+              update();
+            }
+            renderPanel(d);
+          })
+          .call(drag(simulation));
+        c.append('title').text((d) => d.name);
+        return c;
+      });
     nodeSel.classed('expanded', (d) => expanded.has(d.id) && d.hasChildren);
 
-    const labelSel = labelLayer
+    labelSel = labelLayer
       .selectAll('text')
       .data(visibleNodes, (d) => d.id)
-      .join(
-        (enter) =>
-          enter
-            .append('text')
-            .attr('class', (d) => `fg-label${d.depth >= 2 ? ' small' : ''}`)
-            .attr('text-anchor', 'middle')
-            .text((d) => d.name),
-        (update) => update,
-        (exit) => exit.remove(),
+      .join((enter) =>
+        enter
+          .append('text')
+          .attr('class', (d) => `fg-label${d.depth >= 2 ? ' small' : ''}`)
+          .attr('text-anchor', 'middle')
+          .text((d) => d.name),
       );
 
     simulation.nodes(visibleNodes);
     simulation.force('link').links(visibleLinks);
     simulation.alpha(0.7).restart();
-
-    simulation.on('tick', () => {
-      linkSel
-        .attr('x1', (d) => d.source.x)
-        .attr('y1', (d) => d.source.y)
-        .attr('x2', (d) => d.target.x)
-        .attr('y2', (d) => d.target.y);
-      nodeSel.attr('cx', (d) => d.x).attr('cy', (d) => d.y);
-      labelSel
-        .attr('x', (d) => d.x)
-        .attr('y', (d) => d.y + nodeRadius(d) + 12);
-    });
   }
 
   function drag(sim) {
