@@ -6,36 +6,18 @@
 // children (depth ≤ 2). Click a node with hidden children to expand it;
 // click again to collapse. Click any node to open the side panel.
 
-import { validate } from '../validate.js';
-import { showError } from '../app.js';
+import { bootView } from '../boot.js';
+import { PILLAR_COLOR as GROUP_COLOR } from '../colors.js';
+import { escapeHtml } from '../html.js';
 
-const DATA_URL = '../../data/graph.json';
 const WIDTH = 900;
 const HEIGHT = 700;
 
-// Color per top-level group ancestor (the four pillars).
-const GROUP_COLOR = {
-  root: '#0A1A3A',
-  code: '#006AA9',       // Framework
-  community: '#009CDE',
-  private: '#5EB8E8',    // Partners and Services
-  bluefly: '#1A3672',
-};
-
-async function main() {
-  const data = await fetch(DATA_URL).then((r) => {
-    if (!r.ok) throw new Error(`HTTP ${r.status} loading ${DATA_URL}`);
-    return r.json();
-  });
-
-  const errors = validate(data);
-  if (errors.length) {
-    throw new Error('graph.json failed validation:\n  - ' + errors.join('\n  - '));
-  }
-
-  const flat = flatten(data);
-  render(flat);
-}
+bootView({
+  dataUrl: '../../data/graph.json',
+  transform: flatten,
+  render,
+});
 
 // ── Data prep ─────────────────────────────────────────────────────────
 function flatten(root) {
@@ -344,17 +326,3 @@ function render({ nodes, hierarchyLinks, crossLinks }) {
   renderPanel(root);
 }
 
-function escapeHtml(s) {
-  return String(s).replace(/[&<>"']/g, (c) => ({
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#39;',
-  })[c]);
-}
-
-main().catch((err) => {
-  console.error(err);
-  showError(err.message);
-});

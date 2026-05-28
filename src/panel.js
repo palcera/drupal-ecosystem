@@ -1,3 +1,5 @@
+import { escapeHtml } from './html.js';
+
 export function renderPanel(node, allNodes, onNavigate) {
   const panel = document.getElementById('panel');
   panel.innerHTML = '';
@@ -66,6 +68,3 @@ function ancestorsOf(node) {
   return a;
 }
 
-function escapeHtml(s) {
-  return String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-}

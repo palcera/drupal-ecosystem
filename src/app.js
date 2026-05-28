@@ -1,6 +1,5 @@
-// Boot
-import { validate } from './validate.js';
 import { renderPanel } from './panel.js';
+import { groupColor } from './colors.js';
 
 const DATA_URL = '../data/graph.json';
 const VIEW = 800;
@@ -188,14 +187,6 @@ export function render(data, opts = {}) {
   console.log(`rendered ${root.descendants().length} nodes`);
 }
 
-// Mirrors src/tokens.css --node-1 .. --node-5 (see docs/research/brand-cues.md).
-// Hardcoded here because SVG fills can't read CSS custom properties in all browsers.
-function groupColor(group, depth) {
-  if (group === 'root') return '#0A1A3A'; // matches --bg so root blends into the page
-  const shades = ['#1A3672', '#006AA9', '#009CDE', '#5EB8E8', '#CCEDF9'];
-  return shades[Math.min(depth - 1, shades.length - 1)];
-}
-
 // ── Label readability ────────────────────────────────────────────────
 // Fit `name` into a circle of given diameter, applying (in order):
 //   1. word wrapping into <tspan> lines on whitespace boundaries
@@ -282,15 +273,3 @@ function paintLines(sel, lines, fontSize) {
   });
 }
 
-export function showError(message) {
-  const el = document.createElement('div');
-  el.className = 'load-error';
-  el.innerHTML = `
-    <strong>Could not load the diagram data.</strong>
-    <p></p>
-    <button type="button">Retry</button>
-  `;
-  el.querySelector('p').textContent = message;
-  el.querySelector('button').addEventListener('click', () => location.reload());
-  document.body.prepend(el);
-}

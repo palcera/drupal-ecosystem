@@ -2,29 +2,20 @@
 // Reuses the main render() unchanged; only the input tree is reshaped so
 // the Community node becomes the root and absorbs Framework, Partners and
 // Services, and Bluefly as additional children.
-import { validate } from '../validate.js';
-import { render, showError } from '../app.js';
+import { bootView } from '../boot.js';
+import { render } from '../app.js';
 
-const DATA_URL = '../../data/graph.json';
-
-async function main() {
-  const data = await fetch(DATA_URL).then((r) => {
-    if (!r.ok) throw new Error(`HTTP ${r.status} loading ${DATA_URL}`);
-    return r.json();
-  });
-
-  const errors = validate(data);
-  if (errors.length) {
-    throw new Error('graph.json failed validation:\n  - ' + errors.join('\n  - '));
-  }
-
-  render(reparent(data), {
-    drawRoot: true,
-    rootStroke: '#5EB8E8',
-    rootStrokeWidth: 2,
-    rootDash: '6 4',
-  });
-}
+bootView({
+  dataUrl: '../../data/graph.json',
+  transform: reparent,
+  render: (data) =>
+    render(data, {
+      drawRoot: true,
+      rootStroke: '#5EB8E8',
+      rootStrokeWidth: 2,
+      rootDash: '6 4',
+    }),
+});
 
 // Lift the Community subtree to be the root; demote Framework, Partners and
 // Services, and Bluefly into Community's children. IDs and inner structure
@@ -46,8 +37,3 @@ function reparent(data) {
     children: [...(community.children || []), ...others],
   };
 }
-
-main().catch((err) => {
-  console.error(err);
-  showError(err.message);
-});
